@@ -3,10 +3,21 @@
 
 <head>
   <title>Resume Hacker</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css"
   <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 
 </head>
-
+<header>
+  <nav id="sectionTabs">
+    <ul>
+      <li id="infoTab" class="tab">Personal Information</li>
+      <li id="techTab" class="tab">Technical Skills</li>
+      <li id="projTab" class="tab">Projects</li>
+      <li id="edTab" class="tab">Education</li>
+      <li id="expTab" class="tab">Experience</li>
+    </ul>
+  </nav>
+</header>
 <body>
 
   <form id="persInfoForm">
@@ -16,7 +27,7 @@
     <input id="careerText" type="text" name="careerText">
     <input type="submit" id="submitBtn">
   </form>
-<br>
+  <br>
   <form id="techSkillsForm">
     <label for="languagesText">Languages:</label>
     <input id="languagesText" type="text" name="languagesText">
@@ -26,10 +37,17 @@
     <input id="opSysText" type="text" name="opSysText">
     <input type="submit" id="submitBtn">
   </form>
-
   <br>
-
-
+  <form id="projectForm">
+    <label for="projectNameText">Project Name:</label>
+    <input id="projectNameText" type="text" name="projectNameText">
+    <label for="projectDateText">Date:</label>
+    <input id="projectDateText" type="text" name="projectDateText">
+    <label for="projectLinkText">Project Link:</label>
+    <input id="projectLinkText" type="text" name="projectLinkText">
+    <input type="submit" id="submitBtn">
+  </form>
+  <br>
 
   <div id="resume">
     <section id="personalInfo">

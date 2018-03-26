@@ -16,6 +16,12 @@ var UserData = {
     tools: [],
     opSys: [],
   }
+/*  projectInfo: {
+    projectName: '',
+    projectDate: '',
+    projectLink: '',
+  }
+*/  
 };
 
 function contentGen(parentElID, childEl, userText) {
@@ -25,6 +31,16 @@ function contentGen(parentElID, childEl, userText) {
   childVar.textContent = userText;
   parentVar.appendChild(childVar);
 }
+
+var tabs = document.getElementsByClassName('tab');
+console.log(tabs.length);
+
+for(var i=0; i < tabs.length; i++) {
+  var currentTab = tabs[i];
+  currentTab.addEventListener('click', tabHandler);
+}
+
+function tabHandler
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -55,6 +71,18 @@ function handleSubmit2(event) {
   genAllContent();
 
 }
+/* 
+function handleSubmit3(event) {
+  event.preventDefault();
+
+  var projectNameInput = event.target.projectNameText.value;
+  var projectDateInput = event.target.projectDateText.value;
+  var projectLinkInput = event.target.projectLinkText.value;
+
+  UserData.projectInfo.projectName = projectNameInput;
+  UserData.projectInfo.projectDate = projectDateInput;
+  UserData.projectInfo.projectLink = projectLinkInput;
+*/
 
 function removeAllText(element) {
   // loop through all the nodes of the element
@@ -82,6 +110,9 @@ function genAllContent() {
 
   var formEl2 = document.getElementById('techSkillsForm');
   formEl2.addEventListener('submit', handleSubmit2);
+
+  //var formEl3 = document.getElementById('projectForm');
+  //formEl3.addEventListener('submit', handleSubmit3);
 
   
 
