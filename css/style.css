@@ -1,7 +1,82 @@
-h2 {
+#resume {
+  font-family: sans-serif;
+  margin: 0 auto;
+  width: 850px;
+  height: 1100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border: 2px solid black;
+  line-height: 1.5em;
+}
 
+#personalInfo {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h2 {
+  font-size: 1.1em;
+  font-weight:normal;
 }
 
 h3 {
+  font-size: 1em;
+  font-weight:normal;
+}
+
+h4 {
   text-decoration: underline;
+}
+
+p {
+  font-size: 0.9em;
+  text-indent: 3.5em;
+}
+
+
+label.info {
+  position: relative;
+  /*this is the key*/
+  z-index: 24;
+  /* background-color:#ccc;
+  color:#000; */
+  text-decoration: none
+}
+
+label.info:hover {
+  z-index: 25;
+  /* background-color:#ff0; */
+}
+
+label.info span {
+  display: none;
+}
+
+label.info:hover span {
+  /*the span will display just on :hover state*/
+  display: block;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  width: 15em;
+  border: 1px solid #0cf;
+  background-color: #cff;
+  color: #000;
+  text-align: center
+}
+
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove black;
 }
