@@ -91,12 +91,16 @@ function handleSubmit(event) {
   var residenceInput = event.target.residenceText.value;
   var emailInput = event.target.emailText.value;
   var phoneInput = event.target.phoneText.value;
+  var linkedInInput = event.target.linkedInText.value;
+  var gitHubInput = event.target.gitHubText.value;
 
   UserData.persInfo.userName = nameInput;
   UserData.persInfo.careerTitle = careerInput;
   UserData.persInfo.city = residenceInput;
   UserData.persInfo.email = emailInput;
   UserData.persInfo.phone = phoneInput;
+  UserData.persInfo.linkedin = linkedInInput;
+  UserData.persInfo.github = gitHubInput;
 
 
   genAllContent();
@@ -117,6 +121,18 @@ function handleSubmit2(event) {
   genAllContent();
 
 }
+/*
+function handleSubmit3(event) {
+  event.preventDefault();
+
+  var projectNameInput = event.target.projectNameText.value;
+  var projectDateInput = event.target.projectDateText.value;
+  var projectLinkInput = event.target.projectLinkText.value;
+
+  UserData.projectInfo.projectName = projectNameInput;
+  UserData.projectInfo.projectDate = projectDateInput;
+  UserData.projectInfo.projectLink = projectLinkInput;
+*/
 
 function handleSubmit3(event) {
   event.preventDefault();
@@ -230,27 +246,28 @@ function genAllContent() {
   contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
 
   var infoLinks = ['linkedIn', 'gitHub', ];
-  contentGen('personalInfo', 'h3', infoLinks[0] + ' | ' + infoLinks[1]);
+  contentGen('personalInfo', 'p', UserData.persInfo.linkedin + ' | ' + UserData.persInfo.github);
 
-  contentGen('statement', 'h3', 'Lorem Ipsum a bunch of stuff');
+  contentGen('statement', 'p', 'Lorem Ipsum a bunch of stuff');
 
-  contentGen('technicalSkills', 'h3', 'Technical Skills');
+  contentGen('technicalSkills', 'h3', 'TECHNICAL SKILLS');
   contentGen('technicalSkills', 'p', 'Languages: ' + UserData.techSkills.languages);
   contentGen('technicalSkills', 'p', 'Tools: ' + UserData.techSkills.tools);
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
-  contentGen('projects', 'h3', 'Projects');
+
+  contentGen('projects', 'h3', 'PROJECTS');
   contentGen('projects', 'h4', UserData.yourProjects.projTitle + ' | ' + UserData.yourProjects.date + ' | ' + UserData.yourProjects.url);
   contentGen('projects', 'p', UserData.yourProjects.description);
   contentGen('projects', 'h5', 'Languages Used: ' + UserData.yourProjects.languages);
   contentGen('projects', 'h5', UserData.yourProjects.persContributions);
 
-  contentGen('education', 'h3', 'Education');
+  contentGen('education', 'h3', 'EDUCATION');
   contentGen('education', 'h4', UserData.yourEd.school + ' | ' + UserData.yourEd.location);
   contentGen('education', 'p', UserData.yourEd.degree + ' | ' + UserData.yourEd.gradDate);
   
 
-  contentGen('experience', 'h3', 'Experience');
+  contentGen('experience', 'h3', 'EXPERIENCE');
   contentGen('experience', 'h4', UserData.yourExp.company + ' , ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
   contentGen('experience', 'h5', UserData.yourExp.action);
 
