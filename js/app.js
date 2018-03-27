@@ -116,35 +116,67 @@ function handleSubmit2(event) {
   genAllContent();
 
 }
-/* 
 function handleSubmit3(event) {
   event.preventDefault();
 
   var projectNameInput = event.target.projectNameText.value;
   var projectDateInput = event.target.projectDateText.value;
   var projectLinkInput = event.target.projectLinkText.value;
+  var projectDescriptionInput = event.target.projectDescriptionText.value;
+  var languagesUsedInput = event.target.languagesUsedText.value;
+  var persContributionsInput = event.target.PersContributionsText.value;
 
-  UserData.projectInfo.projectName = projectNameInput;
-  UserData.projectInfo.projectDate = projectDateInput;
-  UserData.projectInfo.projectLink = projectLinkInput;
-*/
 
-// function handleSubmit3(event) {
-//   event.preventDefault();
+  UserData.yourProjects.projTitle = projectNameInput;
+  UserData.yourProjects.date = projectDateInput;
+  UserData.yourProjects.url = projectLinkInput;
+  UserData.yourProjects.description = projectDescriptionInput;
+  UserData.yourProjects.languages = languagesUsedInput;
+  UserData.yourProjects.persContributions = persContributionsInput;
 
-//   var languagesInput = event.target.languagesText.value;
-//   console.log(languagesInput);
-//   var toolsInput = event.target.toolsText.value;
-//   var opSysInput = event.target.opSysText.value;
 
-//   UserData.techSkills.languages = languagesInput;
-//   UserData.techSkills.tools = toolsInput;
-//   UserData.techSkills.opSys = opSysInput;
-//   console.log(UserData);
+  genAllContent();
 
-//   genAllContent();
+}
+function handleSubmit4(event) {
+  event.preventDefault();
 
-// }
+  var schoolInput = event.target.schoolText.value;
+  var locationInput = event.target.locationText.value;
+  var degreeInput = event.target.degreeText.value;
+  var gradDateInput = event.target.gradDateText.value;
+
+
+  UserData.yourEd.school = schoolInput;
+  UserData.yourEd.location = locationInput;
+  UserData.yourEd.degree = degreeInput;
+  UserData.yourEd.gradDate = gradDateInput;
+
+  genAllContent();
+
+}
+function handleSubmit5(event) {
+  event.preventDefault();
+
+  var companyInput = event.target.companyText.value;
+  var positionInput = event.target.positionText.value;
+  var startInput = event.target.startText.value;
+  var endInput = event.target.endText.value;
+  var actionInput = event.target.actionText.value;
+
+
+  UserData.yourExp.company = companyInput;
+  UserData.yourExp.position = positionInput;
+  UserData.yourExp.startDate = startInput;
+  UserData.yourExp.endDate = endInput;
+  UserData.yourExp.action = actionInput;
+  
+
+  genAllContent();
+
+}
+
+
 
 function removeAllText(element) {
   // loop through all the nodes of the element
@@ -174,13 +206,13 @@ function genAllContent() {
   formEl2.addEventListener('submit', handleSubmit2);
 
   var formEl3 = document.getElementById('projectForm');
-  //formEl3.addEventListener('submit', handleSubmit3);
+  formEl3.addEventListener('submit', handleSubmit3);
 
   var formEl4 = document.getElementById('edForm');
-  //formEl2.addEventListener('submit', handleSubmit4);
+  formEl4.addEventListener('submit', handleSubmit4);
 
   var formEl5 = document.getElementById('expForm');
-  //formEl2.addEventListener('submit', handleSubmit5);
+  formEl5.addEventListener('submit', handleSubmit5);
 
 
 
@@ -206,10 +238,27 @@ function genAllContent() {
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
   contentGen('projects', 'h4', 'Projects');
+  contentGen('projects', 'h5', UserData.yourProjects.projTitle);
+  contentGen('projects', 'h5', UserData.yourProjects.date);
+  contentGen('projects', 'h5', UserData.yourProjects.url);
+  contentGen('projects', 'h5', UserData.yourProjects.description);
+  contentGen('projects', 'h5', UserData.yourProjects.languages);
+  contentGen('projects', 'h5', UserData.yourProjects.persContributions);
 
   contentGen('education', 'h4', 'Education');
+  contentGen('education', 'p', UserData.yourEd.school);
+  contentGen('education', 'p', UserData.yourEd.location);
+  contentGen('education', 'p', UserData.yourEd.degree);
+  contentGen('education', 'p', UserData.yourEd.gradDate);
+
+
 
   contentGen('experience', 'h4', 'Experience');
+  contentGen('experience', 'p', UserData.yourExp.company);
+  contentGen('experience', 'p', UserData.yourExp.position);
+  contentGen('experience', 'p', UserData.yourExp.startDate);
+  contentGen('experience', 'p', UserData.yourExp.endDate);
+  contentGen('experience', 'p', UserData.yourExp.action);
 
 }
 
