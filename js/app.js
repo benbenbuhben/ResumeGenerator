@@ -39,8 +39,6 @@ var UserData = {
   }]
 };
 
-
-
 function contentGen(parentElID, childEl, userText) {
   var parentVar = document.getElementById(parentElID);
   var childVar = document.createElement(childEl);
@@ -149,6 +147,18 @@ function removeAllText(element) {
   }
 }
 
+var addProjectBtn = document.getElementById('projectBtn');
+
+function addProject() {
+  var newDiv = document.createElement('div');
+  newDiv.innerHTML = document.getElementById('projectDiv').innerHTML;
+  document.getElementById('2').appendChild(newDiv);
+}
+
+addProjectBtn.addEventListener('click', addProject);
+
+
+
 function genAllContent() {
   var resume = document.getElementById('resume');
   console.log(resume);
@@ -168,9 +178,6 @@ function genAllContent() {
 
   var formEl5 = document.getElementById('expForm');
   //formEl2.addEventListener('submit', handleSubmit5);
-
-
-
 
   contentGen('personalInfo', 'h1', UserData.persInfo.userName);
   contentGen('personalInfo', 'h2', UserData.persInfo.careerTitle);
