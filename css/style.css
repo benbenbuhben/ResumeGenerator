@@ -8,7 +8,7 @@
   padding-top: 50px;
   padding-bottom: 50px;
   border: 2px solid black;
-  line-height: .5em;
+  line-height: 1.5em;
 }
 
 #personalInfo {
@@ -16,7 +16,7 @@
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: bold;
 }
 
@@ -26,20 +26,23 @@ h2 {
 }
 
 h3 {
-  font-size: 1em;
-  font-weight:bold;
+  font-size: 1.10em;
+  font-weight: bold;
   line-height: 1em;
+  padding: .05em;
   text-decoration: underline;
 }
 
 h4 {
-  font-size: 1em;
+  font-size: 1.10em;
   font-weight:bold;
   line-height: 1em;
+  padding: .05em;
+  text-indent: 3.5em;
 }
 
 p {
-  font-size: 0.9em;
+  font-size: .9em;
   text-indent: 3.5em;
 }
 

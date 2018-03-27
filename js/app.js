@@ -259,8 +259,8 @@ function genAllContent() {
   contentGen('projects', 'h3', 'PROJECTS');
   contentGen('projects', 'h4', UserData.yourProjects.projTitle + ' | ' + UserData.yourProjects.date + ' | ' + UserData.yourProjects.url);
   contentGen('projects', 'p', UserData.yourProjects.description);
-  contentGen('projects', 'h5', 'Languages Used: ' + UserData.yourProjects.languages);
-  contentGen('projects', 'h5', UserData.yourProjects.persContributions);
+  contentGen('projects', 'p', 'Languages Used: ' + UserData.yourProjects.languages);
+  contentGen('projects', 'p', UserData.yourProjects.persContributions);
 
   contentGen('education', 'h3', 'EDUCATION');
   contentGen('education', 'h4', UserData.yourEd.school + ' | ' + UserData.yourEd.location);
@@ -268,8 +268,8 @@ function genAllContent() {
   
 
   contentGen('experience', 'h3', 'EXPERIENCE');
-  contentGen('experience', 'h4', UserData.yourExp.company + ' , ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
-  contentGen('experience', 'h5', UserData.yourExp.action);
+  contentGen('experience', 'h4', UserData.yourExp.company + ' - ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
+  contentGen('experience', 'p', UserData.yourExp.action);
 
 }
 
