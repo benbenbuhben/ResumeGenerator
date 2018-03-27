@@ -15,15 +15,6 @@ var UserData = {
     languages: '',
     tools: [],
     opSys: [],
-<<<<<<< HEAD
-  }
-/*  projectInfo: {
-    projectName: '',
-    projectDate: '',
-    projectLink: '',
-  }
-*/  
-=======
   },
   yourProjects: [{ //might need an object constructor fcn here
     projTitle: '',
@@ -46,7 +37,6 @@ var UserData = {
     endDate: '',
     action: []
   }]
->>>>>>> b3b6194588626aad66256af3d5818ec54e1e1689
 };
 
 
@@ -60,16 +50,6 @@ function contentGen(parentElID, childEl, userText) {
 }
 
 var tabs = document.getElementsByClassName('tab');
-<<<<<<< HEAD
-console.log(tabs.length);
-
-for(var i=0; i < tabs.length; i++) {
-  var currentTab = tabs[i];
-  currentTab.addEventListener('click', tabHandler);
-}
-
-function tabHandler
-=======
 
 var allFieldsets = [];
 for (var i = 0; i < tabs.length; i++) {
@@ -101,7 +81,6 @@ function tabHandler(event) {
     allFieldsets[4].style.display = 'block';
   }
 }
->>>>>>> b3b6194588626aad66256af3d5818ec54e1e1689
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -193,12 +172,6 @@ function genAllContent() {
   var formEl2 = document.getElementById('techSkillsForm');
   formEl2.addEventListener('submit', handleSubmit2);
 
-<<<<<<< HEAD
-  //var formEl3 = document.getElementById('projectForm');
-  //formEl3.addEventListener('submit', handleSubmit3);
-
-  
-=======
   var formEl3 = document.getElementById('projectForm');
   //formEl3.addEventListener('submit', handleSubmit3);
 
@@ -209,7 +182,6 @@ function genAllContent() {
   //formEl2.addEventListener('submit', handleSubmit5);
 
 
->>>>>>> b3b6194588626aad66256af3d5818ec54e1e1689
 
 
   contentGen('personalInfo', 'h1', UserData.persInfo.userName);
@@ -224,7 +196,7 @@ function genAllContent() {
 
   contentGen('statement', 'h3', 'Lorem Ipsum a bunch of stuff');
 
-  contentGen('technicalSkills', 'h4', 'Technical Skills');
+  contentGen('technicalSkills', 'h4', 'TECHNICAL SKILLS');
 
   //var LanguageIntro = 'Languages: ';
   //var Languages = UserData.techSkills.languages;
@@ -233,11 +205,11 @@ function genAllContent() {
   contentGen('technicalSkills', 'p', 'Tools: ' + UserData.techSkills.tools);
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
-  contentGen('projects', 'h4', 'Projects');
+  contentGen('projects', 'h4', 'PROJECTS');
 
-  contentGen('education', 'h4', 'Education');
+  contentGen('education', 'h4', 'EDUCATION');
 
-  contentGen('experience', 'h4', 'Experience');
+  contentGen('experience', 'h4', 'EXPERIENCE');
 
 }
 

@@ -27,15 +27,16 @@
     <form id="persInfoForm">
       <fieldset>
         <label for="nameText" class="info">Name: <span>Type your full name</span></label>
-        <input id="nameText" type="text" name="nameText">
-        <label for="careerText" class="info">Career:</label>
-        <input id="careerText" type="text" name="careerText">
-        <label for="residenceText" class="info">Current Residence:</label>
+        <input id="nameText" type="text" name="nameText" placeholder="Full Name">
+        <label for="careerText" class="info">Position:</label>
+        <input id="careerText" type="text" name="careerText" placeholder="Desired Position">
+   <!--     <label for="residenceText" class="info">Current Residence:</label>
         <input id="residenceText" type="text" name="residenceText">
+   -->
         <label for="emailText" class="info">E-mail:</label>
-        <input id="emailText" type="text" name="emailText">
-        <label for="phoneText" class="info">Phone #:</label>
-        <input id="phoneText" type="text" name="phoneText">
+        <input id="emailText" type="text" name="emailText" placeholder="Email Address">
+        <label for="phoneText" class="info">Phone:</label>
+        <input id="phoneText" type="text" name="phoneText" placeholder="999-999-9999">
         <input type="submit" id="submitBtn">
       </fieldset>
     </form>
@@ -44,11 +45,11 @@
     <form id="techSkillsForm">
       <fieldset>
         <label for="languagesText" class="info">Languages:</label>
-        <input id="languagesText" type="text" name="languagesText">
+        <input id="languagesText" type="text" name="languagesText" placeholder="Languages">
         <label for="toolsText" class="info">Tools:</label>
-        <input id="toolsText" type="text" name="toolsText">
+        <input id="toolsText" type="text" name="toolsText" placeholder="Tools">
         <label for="opSysText" class="info">Operating Systems:</label>
-        <input id="opSysText" type="text" name="opSysText">
+        <input id="opSysText" type="text" name="opSysText" placeholder="Operating Systems">
         <input type="submit" id="submitBtn">
       </fieldset>
     </form>
@@ -58,17 +59,17 @@
     <form id="projectForm">
       <fieldset>
         <label for="projectNameText" class="info">Project Name:</label>
-        <input id="projectNameText" type="text" name="projectNameText">
+        <input id="projectNameText" type="text" name="projectNameText" placeholder="Project Name">
         <label for="projectDateText" class="info">Date:</label>
-        <input id="projectDateText" type="text" name="projectDateText">
-        <label for="projectLinkText" class="info">Project Link:</label>
-        <input id="projectLinkText" type="text" name="projectLinkText">
-        <label for="projectDescriptionText" class="info">Project Description:</label>
-        <input id="projectDescriptionText" type="text" name="projectDescriptionText">
+        <input id="projectDateText" type="text" name="projectDateText" placeholder="Month Year">
+        <label for="projectLinkText" class="info">Link:</label>
+        <input id="projectLinkText" type="text" name="projectLinkText" placeholder="Link to Project">
+        <label for="projectDescriptionText" class="info">Description:</label>
+        <input id="projectDescriptionText" type="text" name="projectDescriptionText" placeholder="One sentence description">
         <label for="languagesUsedText" class="info">Languages Used:</label>
-        <input id="languagesUsedText" type="text" name="languagesUsedText">
-        <label for="PersContributionsText" class="info">Personal Contributions:</label>
-        <input id="PersContributionsText" type="text" name="PersContributionsText">
+        <input id="languagesUsedText" type="text" name="languagesUsedText" placeholder="Languages Used">
+        <label for="PersContributionsText" class="info">Project Details:</label>
+        <input id="PersContributionsText" type="text" name="PersContributionsText" placeholder="Write individual statements, then click '' ">
         <input type="submit" id="submitBtn">
       </fieldset>
     </form>
@@ -76,14 +77,14 @@
   <div id="3">
     <form id="edForm">
       <fieldset>
-        <label for="schoolText" class="info">School:</label>
-        <input id="schoolText" type="text" name="schoolText">
+        <label for="schoolText" class="info">School Name:</label>
+        <input id="schoolText" type="text" name="schoolText" placeholder="Institution Name">
         <label for="locationText" class="info">Location:</label>
-        <input id="locationText" type="text" name="locationText">
-        <label for="degreeText" class="info">Degree:</label>
-        <input id="degreeText" type="text" name="degreeText">
+        <input id="locationText" type="text" name="locationText" placeholder="City, State">
+        <label for="degreeText" class="info">Degree/Program:</label>
+        <input id="degreeText" type="text" name="degreeText" placeheholder="Degree, Certificate or Program">
         <label for="gradDateText" class="info">Graduation Date:</label>
-        <input id="gradDateText" type="text" name="gradDateText">
+        <input id="gradDateText" type="text" name="gradDateText" placeholder="Year">
         <input type="submit" id="submitBtn">
       </fieldset>
     </form>
@@ -91,16 +92,16 @@
   <div id="4">
     <form id="expForm">
       <fieldset>
-        <label for="companyText" class="info">Company Name:</label>
-        <input id="companyText" type="text" name="companyText">
-        <label for="positionText" class="info">Company Name:</label>
-        <input id="positionText" type="text" name="positionText">
+        <label for="companyText" class="info">Employer Name:</label>
+        <input id="companyText" type="text" name="companyText" placeholder="Employer Name">
+        <label for="positionText" class="info">Position Title:</label>
+        <input id="positionText" type="text" name="positionText" placeholder="Position or Title">
         <label for="startText" class="info">Start Date:</label>
-        <input id="startText" type="text" name="startText">
+        <input id="startText" type="text" name="startText" placeholder="Year or Month, Year">
         <label for="endText" class="info">End Date:</label>
-        <input id="endText" type="text" name="endText">
-        <label for="actionText" class="info">Action:</label>
-        <input id="actionText" type="text" name="actionText">
+        <input id="endText" type="text" name="endText" placeholder="Year or Month, Year">
+        <label for="actionText" class="info">Responsibilities:</label>
+        <input id="actionText" type="text" name="actionText" placeholder="Write individual statements, click ' ' ">
         <input type="submit" id="submitBtn">
       </fieldset>
     </form>

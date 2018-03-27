@@ -1,5 +1,5 @@
 #resume {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0 auto;
   width: 850px;
   height: 1100px;
@@ -17,6 +17,7 @@
 
 h1 {
   font-size: 1.4em;
+  font-weight: bold;
 }
 
 h2 {
