@@ -1,6 +1,5 @@
 'use strict';
-
-var UserData = {
+  var UserData = {
   persInfo: {
     userName: '',
     careerTitle: '',
@@ -114,6 +113,18 @@ function handleSubmit2(event) {
   genAllContent();
 
 }
+/* 
+function handleSubmit3(event) {
+  event.preventDefault();
+
+  var projectNameInput = event.target.projectNameText.value;
+  var projectDateInput = event.target.projectDateText.value;
+  var projectLinkInput = event.target.projectLinkText.value;
+
+  UserData.projectInfo.projectName = projectNameInput;
+  UserData.projectInfo.projectDate = projectDateInput;
+  UserData.projectInfo.projectLink = projectLinkInput;
+*/
 
 // function handleSubmit3(event) {
 //   event.preventDefault();
