@@ -1,6 +1,5 @@
 'use strict';
-
-var UserData = {
+  var UserData = {
   persInfo: {
     userName: '',
     careerTitle: '',
@@ -40,7 +39,15 @@ for(var i=0; i < tabs.length; i++) {
   currentTab.addEventListener('click', tabHandler);
 }
 
-function tabHandler
+function tabHandler(event){
+  for(var i=0; i < tabs.length; i++) {
+    var currentTab = tabs[i];
+    currentTab.style.display = 'none';
+  } 
+  if(event.target.id === 'infoTab') {
+
+  }
+}
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -90,16 +97,18 @@ function removeAllText(element) {
   for (var i = 0; i < nodes.length; i++) {
     var node = nodes[i];
     // if it's a text node, remove it
-    if (node.nodeType == Node.TEXT_NODE) {
+    console.log(Node.TEXT_NODE)
+    if (node.nodeType === Node.TEXT_NODE) {
       node.parentNode.removeChild(node);
       i--; // have to update our incrementor since we just removed a node from childNodes
     } else
     // if it's an element, repeat this process
-    if (node.nodeType == Node.ELEMENT_NODE) {
+    if (node.nodeType === Node.ELEMENT_NODE) {
       removeAllText(node);
     }
   }
 }
+
 
 function genAllContent() {
   var resume = document.getElementById('resume');
