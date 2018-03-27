@@ -90,12 +90,16 @@ function handleSubmit(event) {
   var residenceInput = event.target.residenceText.value;
   var emailInput = event.target.emailText.value;
   var phoneInput = event.target.phoneText.value;
+  var linkedInInput = event.target.linkedInText.value;
+  var gitHubInput = event.target.gitHubText.value;
 
   UserData.persInfo.userName = nameInput;
   UserData.persInfo.careerTitle = careerInput;
   UserData.persInfo.city = residenceInput;
   UserData.persInfo.email = emailInput;
   UserData.persInfo.phone = phoneInput;
+  UserData.persInfo.linkedin = linkedInInput;
+  UserData.persInfo.github = gitHubInput;
 
 
   genAllContent();
@@ -116,7 +120,7 @@ function handleSubmit2(event) {
   genAllContent();
 
 }
-/* 
+/*
 function handleSubmit3(event) {
   event.preventDefault();
 
@@ -189,14 +193,14 @@ function genAllContent() {
 
   //Eventually User Input, but for now hard-coded with placeholders
   //var infoArray = ['city', 'email', 'phone'];
-  contentGen('personalInfo', 'h3', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
+  contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
 
   var infoLinks = ['linkedIn', 'gitHub', ];
-  contentGen('personalInfo', 'h3', infoLinks[0] + ' | ' + infoLinks[1]);
+  contentGen('personalInfo', 'p', UserData.persInfo.linkedin + ' | ' + UserData.persInfo.github);
 
-  contentGen('statement', 'h3', 'Lorem Ipsum a bunch of stuff');
+  contentGen('statement', 'p', 'Lorem Ipsum a bunch of stuff');
 
-  contentGen('technicalSkills', 'h4', 'TECHNICAL SKILLS');
+  contentGen('technicalSkills', 'h3', 'TECHNICAL SKILLS');
 
   //var LanguageIntro = 'Languages: ';
   //var Languages = UserData.techSkills.languages;
@@ -205,11 +209,11 @@ function genAllContent() {
   contentGen('technicalSkills', 'p', 'Tools: ' + UserData.techSkills.tools);
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
-  contentGen('projects', 'h4', 'PROJECTS');
+  contentGen('projects', 'h3', 'PROJECTS');
 
-  contentGen('education', 'h4', 'EDUCATION');
+  contentGen('education', 'h3', 'EDUCATION');
 
-  contentGen('experience', 'h4', 'EXPERIENCE');
+  contentGen('experience', 'h3', 'EXPERIENCE');
 
 }
 

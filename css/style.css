@@ -16,22 +16,24 @@
 }
 
 h1 {
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1.1em;
+  font-size: 1.25em;
   font-weight:normal;
 }
 
 h3 {
   font-size: 1em;
-  font-weight:normal;
+  font-weight:bold;
+  text-decoration: underline;
 }
 
 h4 {
-  text-decoration: underline;
+  font-size: 1em;
+  font-weight:bold
 }
 
 p {
@@ -75,9 +77,22 @@ fieldset {
   display: block;
   margin-left: 2px;
   margin-right: 2px;
-  padding-top: 0.35em;
-  padding-bottom: 0.625em;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
   border: 2px groove black;
+}
+input {
+display: inline;  
+margin: .5em;
+padding: .5em;
+}
+
+.tab {
+  padding: .25em;
+}
+
+.tab:hover {
+  color: #0cf;
 }
