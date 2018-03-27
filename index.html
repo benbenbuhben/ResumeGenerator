@@ -3,56 +3,138 @@
 
 <head>
   <title>Resume Hacker</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 
 </head>
+<header>
+  <nav id="sectionTabs">
+    <ul>
+      <li id="infoTab" class="tab">Personal Information</li>
+      <li id="techTab" class="tab">Technical Skills</li>
+      <li id="projTab" class="tab">Projects</li>
+      <li id="edTab" class="tab">Education</li>
+      <li id="expTab" class="tab">Experience</li>
+      <li><a href="resume.html"> Preview </a></li>
+    </ul>
+   
+  </nav>
+</header>
+
 
 <body>
+  <div id="0">
+    <form id="persInfoForm">
+      <fieldset>
+        <label for="nameText" class="info">Name: <span>Type your full name</span></label>
+        <input id="nameText" type="text" name="nameText">
+        <label for="careerText" class="info">Career:</label>
+        <input id="careerText" type="text" name="careerText">
+        <label for="residenceText" class="info">Current Residence:</label>
+        <input id="residenceText" type="text" name="residenceText">
+        <label for="emailText" class="info">E-mail:</label>
+        <input id="emailText" type="text" name="emailText">
+        <label for="phoneText" class="info">Phone #:</label>
+        <input id="phoneText" type="text" name="phoneText">
+        <input type="submit" id="submitBtn">
+      </fieldset>
+    </form>
+  </div>
+  <div id="1">
+    <form id="techSkillsForm">
+      <fieldset>
+        <label for="languagesText" class="info">Languages:</label>
+        <input id="languagesText" type="text" name="languagesText">
+        <label for="toolsText" class="info">Tools:</label>
+        <input id="toolsText" type="text" name="toolsText">
+        <label for="opSysText" class="info">Operating Systems:</label>
+        <input id="opSysText" type="text" name="opSysText">
+        <input type="submit" id="submitBtn">
+      </fieldset>
+    </form>
 
-  <form id="persInfoForm">
-    <label for="nameText">Name:</label>
-    <input id="nameText" type="text" name="nameText">
-    <label for="careerText">Career:</label>
-    <input id="careerText" type="text" name="careerText">
-    <input type="submit" id="submitBtn">
-  </form>
-<br>
-  <form id="techSkillsForm">
-    <label for="languagesText">Languages:</label>
-    <input id="languagesText" type="text" name="languagesText">
-    <label for="toolsText">Tools:</label>
-    <input id="toolsText" type="text" name="toolsText">
-    <label for="opSysText">Operating Systems:</label>
-    <input id="opSysText" type="text" name="opSysText">
-    <input type="submit" id="submitBtn">
-  </form>
+  </div>
+  <div id="2">
+    <form id="projectForm">
+      <fieldset>
+        <label for="projectNameText" class="info">Project Name:</label>
+        <input id="projectNameText" type="text" name="projectNameText">
+        <label for="projectDateText" class="info">Date:</label>
+        <input id="projectDateText" type="text" name="projectDateText">
+        <label for="projectLinkText" class="info">Project Link:</label>
+        <input id="projectLinkText" type="text" name="projectLinkText">
+        <label for="projectDescriptionText" class="info">Project Description:</label>
+        <input id="projectDescriptionText" type="text" name="projectDescriptionText">
+        <label for="languagesUsedText" class="info">Languages Used:</label>
+        <input id="languagesUsedText" type="text" name="languagesUsedText">
+        <label for="PersContributionsText" class="info">Personal Contributions:</label>
+        <input id="PersContributionsText" type="text" name="PersContributionsText">
+        <input type="submit" id="submitBtn">
+      </fieldset>
+    </form>
+  </div>
+  <div id="3">
+    <form id="edForm">
+      <fieldset>
+        <label for="schoolText" class="info">School:</label>
+        <input id="schoolText" type="text" name="schoolText">
+        <label for="locationText" class="info">Location:</label>
+        <input id="locationText" type="text" name="locationText">
+        <label for="degreeText" class="info">Degree:</label>
+        <input id="degreeText" type="text" name="degreeText">
+        <label for="gradDateText" class="info">Graduation Date:</label>
+        <input id="gradDateText" type="text" name="gradDateText">
+        <input type="submit" id="submitBtn">
+      </fieldset>
+    </form>
+  </div>
+  <div id="4">
+    <form id="expForm">
+      <fieldset>
+        <label for="companyText" class="info">Company Name:</label>
+        <input id="companyText" type="text" name="companyText">
+        <label for="positionText" class="info">Company Name:</label>
+        <input id="positionText" type="text" name="positionText">
+        <label for="startText" class="info">Start Date:</label>
+        <input id="startText" type="text" name="startText">
+        <label for="endText" class="info">End Date:</label>
+        <input id="endText" type="text" name="endText">
+        <label for="actionText" class="info">Action:</label>
+        <input id="actionText" type="text" name="actionText">
+        <input type="submit" id="submitBtn">
+      </fieldset>
+    </form>
+  </div>
 
   <br>
 
-
-
   <div id="resume">
-    <section id="personalInfo">
-    </section>
+      <section id="personalInfo">
+      </section>
+  
+      <hr>
+  
+      <section id="statement">
+  
+      </section>
+  
+      <section id="technicalSkills">
+      </section>
+  
+      <section id="projects">
+      </section>
+  
+      <section id="education">
+      </section>
+  
+      <section id="experience">
+      </section>
+    </div>
+  
+  
 
-    <hr>
 
-    <section id="statement">
-
-    </section>
-
-    <section id="technicalSkills">
-    </section>
-
-    <section id="projects">
-    </section>
-
-    <section id="education">
-    </section>
-
-    <section id="experience">
-    </section>
-  </div>
+<!-- <iframe src="resume.html" width="1000" height="1000"></iframe> -->
 
 
   <script src="js/app.js"></script>
