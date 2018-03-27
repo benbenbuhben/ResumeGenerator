@@ -85,8 +85,9 @@ function tabHandler(event) {
 function handleSubmit(event) {
   event.preventDefault();
 
+
   var nameInput = event.target.nameText.value;
-  var careerInput = event.target.careerText.value;
+  var careerInput = event.target.careerText.value; //careerText is id for <input>
   var residenceInput = event.target.residenceText.value;
   var emailInput = event.target.emailText.value;
   var phoneInput = event.target.phoneText.value;
@@ -133,23 +134,73 @@ function handleSubmit3(event) {
   UserData.projectInfo.projectLink = projectLinkInput;
 */
 
-// function handleSubmit3(event) {
-//   event.preventDefault();
+function handleSubmit3(event) {
+  event.preventDefault();
 
-//   var languagesInput = event.target.languagesText.value;
-//   console.log(languagesInput);
-//   var toolsInput = event.target.toolsText.value;
-//   var opSysInput = event.target.opSysText.value;
+  //var targetedInput = event.target;
+  //var projectNameInput = event.target.projectNameText[targetedInput].value;
+  var projectNameInput = event.target.projectNameText.value;
+  var projectDateInput = event.target.projectDateText.value;
+  var projectLinkInput = event.target.projectLinkText.value;
+  var projectDescriptionInput = event.target.projectDescriptionText.value;
+  var languagesUsedInput = event.target.languagesUsedText.value;
+  var persContributionsInput = event.target.PersContributionsText.value;
 
-//   UserData.techSkills.languages = languagesInput;
-//   UserData.techSkills.tools = toolsInput;
-//   UserData.techSkills.opSys = opSysInput;
-//   console.log(UserData);
+  UserData.yourProjects.projTitle = projectNameInput;
+  UserData.yourProjects.date = projectDateInput;
+  UserData.yourProjects.url = projectLinkInput;
+  UserData.yourProjects.description = projectDescriptionInput;
+  UserData.yourProjects.languages = languagesUsedInput;
+  UserData.yourProjects.persContributions = persContributionsInput;
 
-//   genAllContent();
+  // var class = document.getElementsByClassName('projectSTuff')
+  // for (var i = 0; index < array.length; i++) {
+  //   var targeteddeal = event.target.class[i].value
+  //   targeteddeal = '';
 
-// }
+  genAllContent();
 
+}
+
+function handleSubmit4(event) {
+  event.preventDefault();
+
+  var schoolInput = event.target.schoolText.value;
+  var locationInput = event.target.locationText.value;
+  var degreeInput = event.target.degreeText.value;
+  var gradDateInput = event.target.gradDateText.value;
+
+
+  UserData.yourEd.school = schoolInput;
+  UserData.yourEd.location = locationInput;
+  UserData.yourEd.degree = degreeInput;
+  UserData.yourEd.gradDate = gradDateInput;
+
+  genAllContent();
+
+}
+
+function handleSubmit5(event) {
+  event.preventDefault();
+
+  var companyInput = event.target.companyText.value;
+  var positionInput = event.target.positionText.value;
+  var startInput = event.target.startText.value;
+  var endInput = event.target.endText.value;
+  var actionInput = event.target.actionText.value;
+
+
+  UserData.yourExp.company = companyInput;
+  UserData.yourExp.position = positionInput;
+  UserData.yourExp.startDate = startInput;
+  UserData.yourExp.endDate = endInput;
+  UserData.yourExp.action = actionInput;
+
+
+  genAllContent();
+
+}
+/////////////////////////
 function removeAllText(element) {
   // loop through all the nodes of the element
   var nodes = element.childNodes;
@@ -177,14 +228,13 @@ function genAllContent() {
   formEl2.addEventListener('submit', handleSubmit2);
 
   var formEl3 = document.getElementById('projectForm');
-  //formEl3.addEventListener('submit', handleSubmit3);
+  formEl3.addEventListener('submit', handleSubmit3);
 
   var formEl4 = document.getElementById('edForm');
-  //formEl2.addEventListener('submit', handleSubmit4);
+  formEl4.addEventListener('submit', handleSubmit4);
 
   var formEl5 = document.getElementById('expForm');
-  //formEl2.addEventListener('submit', handleSubmit5);
-
+  formEl5.addEventListener('submit', handleSubmit5);
 
 
 
@@ -201,19 +251,25 @@ function genAllContent() {
   contentGen('statement', 'p', 'Lorem Ipsum a bunch of stuff');
 
   contentGen('technicalSkills', 'h3', 'TECHNICAL SKILLS');
-
-  //var LanguageIntro = 'Languages: ';
-  //var Languages = UserData.techSkills.languages;
-
   contentGen('technicalSkills', 'p', 'Languages: ' + UserData.techSkills.languages);
   contentGen('technicalSkills', 'p', 'Tools: ' + UserData.techSkills.tools);
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
+
   contentGen('projects', 'h3', 'PROJECTS');
+  contentGen('projects', 'h4', UserData.yourProjects.projTitle + ' | ' + UserData.yourProjects.date + ' | ' + UserData.yourProjects.url);
+  contentGen('projects', 'p', UserData.yourProjects.description);
+  contentGen('projects', 'h5', 'Languages Used: ' + UserData.yourProjects.languages);
+  contentGen('projects', 'h5', UserData.yourProjects.persContributions);
 
   contentGen('education', 'h3', 'EDUCATION');
+  contentGen('education', 'h4', UserData.yourEd.school + ' | ' + UserData.yourEd.location);
+  contentGen('education', 'p', UserData.yourEd.degree + ' | ' + UserData.yourEd.gradDate);
+  
 
   contentGen('experience', 'h3', 'EXPERIENCE');
+  contentGen('experience', 'h4', UserData.yourExp.company + ' , ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
+  contentGen('experience', 'h5', UserData.yourExp.action);
 
 }
 
@@ -249,3 +305,7 @@ genAllContent();
 // }
 
 //  techtab projtab edtab exptab
+
+// function clickToEdit() {
+
+// }
