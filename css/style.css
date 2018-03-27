@@ -1,3 +1,6 @@
+header {
+  margin-bottom: -200px;
+}
 #resume {
   font-family: sans-serif;
   margin: 0 auto;
@@ -9,6 +12,37 @@
   padding-bottom: 50px;
   border: 2px solid black;
   line-height: 1.5em;
+}
+
+#sectionTabs {
+  height: 250px;
+  right: 10;
+  position: relative;
+  top: 150px;
+  width: 175px;
+}
+
+#sectionTabs ul {
+  color: white;
+  font-family: 'Futura';
+  font-weight: 300;
+  font-size: 20px;
+  position: relative;
+  top: 5px;
+}
+
+#sectionTabs ul li {
+  background-color: rgb(58, 129, 221);
+  border-width: 2px 2px 1px 2px;
+  border-style: solid;
+  border-color: cornflowerblue;
+  cursor: pointer;
+  padding: 8px;
+  width: 155px;
+}
+
+#sectionTabs ul li:hover {
+
 }
 
 #personalInfo {
