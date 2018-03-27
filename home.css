@@ -1,12 +1,3 @@
-img {
-  display: block;
-}
-p {
-  position: relative;
-}
-nav ul li a {
-  color: white
-}
 ul {
   list-style-type: none;
   margin: 0;
