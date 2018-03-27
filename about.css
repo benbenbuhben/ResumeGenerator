@@ -3,5 +3,7 @@ img {
 }
 p {
   position: relative;
-
+}
+nav ul li a {
+  color: black
 }
