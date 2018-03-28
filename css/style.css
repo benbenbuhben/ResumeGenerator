@@ -2,14 +2,44 @@ header {
   margin-bottom: -200px;
 }
 
+main {
+  font-family: Helvetica;
+}
+
+#header-nav {
+  background-color: rgb(24, 23, 23);
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+
+#logo {
+  left: 100px;
+  position: absolute;
+  top: 10px;
+}
+
+#header-nav ul {
+  position: relative;
+  text-align: center;
+  right: 200px;
+  top: 40px;
+}
+
+#header-nav ul li {
+  display: inline-block;
+  margin-left: 75px;
+}
+
 #header-nav li a {
-  color: black;
+  color: white;
+  text-decoration: none;
 }
 
 #resume {
   font-family: sans-serif;
   margin: 0 auto;
-  width: 850px;d
+  width: 850px;
   height: 1100px;
   padding-left: 100px;
   padding-right: 100px;
@@ -23,7 +53,7 @@ header {
   height: 250px;
   right: 10;
   position: relative;
-  top: 350px;
+  top: 200px;
   width: 175px;
 }
 
@@ -32,7 +62,6 @@ header {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 1px 1px 10px rgb(194, 194, 194);
-  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   position: relative;
   top: 5px;
