@@ -157,8 +157,8 @@ function handleSubmit(event) {
   //addClickToEdit(0);
 
   saveToLS();
-  //genAllContent(); //replace with savetols & trigger refresh (update source of iframe)
-  document.getElementById('preview').contentWindow.location.reload();
+ 
+  window.location.reload();
 
 
 }
@@ -172,7 +172,7 @@ function handleSubmit2(event) {
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 }
 
 function handleSubmit3(event) {
@@ -191,7 +191,7 @@ function handleSubmit3(event) {
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
@@ -229,7 +229,7 @@ function handleSubmit4(event) {
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
@@ -253,7 +253,7 @@ function handleSubmit5(event) {
 
   saveToLS();
   //genAllContent(); //need to comment this out
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
@@ -279,7 +279,7 @@ function handleSubmit6(event) {
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
