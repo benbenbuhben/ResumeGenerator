@@ -11,6 +11,7 @@
   <nav id="sectionTabs">
     <ul>
       <li id="infoTab" class="tab">Personal Information</li>
+      <li id="statementTab" class="tab">Objective Statement</li>
       <li id="techTab" class="tab">Technical Skills</li>
       <li id="projTab" class="tab">Projects</li>
       <li id="edTab" class="tab">Education</li>
@@ -41,6 +42,15 @@
     </form>
   </div>
   <div id="1">
+      <form id="statementForm">
+        <fieldset>
+          <label for="statementText" class="info">Objective Statement: <span>Type your full name</span></label>
+          <input id="statementText" type="text" name="statementText">
+          <input type="submit" id="submitBtn">
+        </fieldset>
+      </form>
+    </div>
+  <div id="2">
     <form id="techSkillsForm">
       <fieldset>
         <label for="languagesText" class="info">Languages:</label>
@@ -54,26 +64,26 @@
     </form>
 
   </div>
-  <div id="2">
+  <div id="3">
     <form id="projectForm">
       <fieldset>
         <label for="projectNameText" class="info">Project Name:</label>
-        <input id="projectNameText" type="text" name="projectNameText"> 
+        <input id="projectNameText" class="projectClass" type="text" name="projectNameText"> 
         <label for="projectDateText" class="info">Date:</label>
-        <input id="projectDateText" type="text" name="projectDateText">
+        <input id="projectDateText" class="projectClass" type="text" name="projectDateText">
         <label for="projectLinkText" class="info">Project Link:</label>
-        <input id="projectLinkText" type="text" name="projectLinkText">
+        <input id="projectLinkText" class="projectClass" type="text" name="projectLinkText">
         <label for="projectDescriptionText" class="info">Project Description:</label>
-        <input id="projectDescriptionText" type="text" name="projectDescriptionText">
+        <input id="projectDescriptionText" class="projectClass" type="text" name="projectDescriptionText">
         <label for="languagesUsedText" class="info">Languages Used:</label>
-        <input id="languagesUsedText" type="text" name="languagesUsedText">
+        <input id="languagesUsedText" class="projectClass" type="text" name="languagesUsedText">
         <label for="PersContributionsText" class="info">Personal Contributions:</label>
-        <input id="PersContributionsText" type="text" name="PersContributionsText">
+        <input id="PersContributionsText" class="projectClass" type="text" name="PersContributionsText">
         <input type="submit" id="submitBtn">
       </fieldset>
     </form>
   </div>
-  <div id="3">
+  <div id="4">
     <form id="edForm">
       <fieldset>
         <label for="schoolText" class="info">School:</label>
@@ -88,12 +98,12 @@
       </fieldset>
     </form>
   </div>
-  <div id="4">
+  <div id="5">
     <form id="expForm">
       <fieldset>
-        <label for="companyText" class="info">Company Name:</label>
+        <label for="companyText" class="info">Employer Name:</label>
         <input id="companyText" type="text" name="companyText">
-        <label for="positionText" class="info">Company Name:</label>
+        <label for="positionText" class="info"> Location:</label>
         <input id="positionText" type="text" name="positionText">
         <label for="startText" class="info">Start Date:</label>
         <input id="startText" type="text" name="startText">
