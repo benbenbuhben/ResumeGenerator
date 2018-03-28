@@ -2,142 +2,187 @@
 <html>
 
 <head>
-  <title>Resume Hacker</title>
-  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
-
+ <title>Resume Hacker</title>
+ <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+ </head>
+ <main>
+   <header>
+     <nav id="header-nav">
+       <img src="http://via.placeholder.com/70x70" id="logo"></img>
+       <ul>
+         <li><a href="#">Homepage</a></li>
+         <li><a href="#">Resume Generator</a></li>
+         <li><a href="#">About The Team</a></li>
+       </ul>
+     </nav>
+   </header>
 
-</head>
-<header>
+   <body>
   <nav id="sectionTabs">
     <ul>
       <li id="infoTab" class="tab">Personal Information</li>
+      <li id="statementTab" class="tab">Objective Statement</li>
       <li id="techTab" class="tab">Technical Skills</li>
       <li id="projTab" class="tab">Projects</li>
       <li id="edTab" class="tab">Education</li>
       <li id="expTab" class="tab">Experience</li>
-
-      <!-- <li><a href="resume.html"> Preview </a></li> -->
+      <!-- <li>
+        <a href="resume.html"> Preview </a>
+      </li> -->
     </ul>
-   
+
   </nav>
 </header>
 
 
 <body>
-  <div id="0">
-    <form id="persInfoForm">
-      <fieldset>
-        <label for="nameText" class="info">Name: <span>Type your full name</span></label>
-        <input id="nameText" type="text" name="nameText">
-        <label for="careerText" class="info">Career:</label>
-        <input id="careerText" type="text" name="careerText">
-        <label for="residenceText" class="info">Current Residence:</label>
-        <input id="residenceText" type="text" name="residenceText">
-        <label for="emailText" class="info">E-mail:</label>
-        <input id="emailText" type="text" name="emailText">
-        <label for="phoneText" class="info">Phone #:</label>
-        <input id="phoneText" type="text" name="phoneText">
-        <input type="submit" id="submitBtn">
-      </fieldset>
-    </form>
-  </div>
+    <div id="0">
+        <form id="persInfoForm">
+          <fieldset>
+            <label for="nameText" class="info">Name: <span>Type your full name</span></label>
+            <input id="nameText" type="text" name="nameText" placeholder="Full Name">
+            <label for="careerText" class="info">Position: <span>Add a title to let the reader know what you do immediately</span></label>
+            <input id="careerText" type="text" name="careerText" placeholder="Desired Position">
+            <label for="residenceText" class="info">Current Residence: <span>Add your city and state only (NOT physical address)</span></label>
+            <input id="residenceText" type="text" name="residenceText" placeholder="City, State">
+            <label for="emailText" class="info">E-mail: <span>Type your email address</span></label>
+            <input id="emailText" type="text" name="emailText" placeholder="Email Address">
+            <label for="phoneText" class="info">Phone: <span>Enter your phone number</span></label>
+            <input id="phoneText" type="text" name="phoneText" placeholder="999-999-9999">
+            <label for="linkedInText" class="info">Linked In: <span>Include a hyperlink to your personalized LinkedIn URL</span></label>
+            <input id="linkedInText" type="text" name="linkedInText" placeholder="Linked In URL">
+            <label for="gitHubText" class="info">GitHub: <span>Include a hyperlink to your GitHub account URL</span></label>
+            <input id="gitHubText" type="text" name="gitHubText" placeholder="Git Hub URL">
+            <input type="submit" id="submitBtn">
+          </fieldset>
+        </form>
+      </div>
   <div id="1">
-    <form id="techSkillsForm">
+    <form id="statementForm">
       <fieldset>
-        <label for="languagesText" class="info">Languages:</label>
-        <input id="languagesText" type="text" name="languagesText">
-        <label for="toolsText" class="info">Tools:</label>
-        <input id="toolsText" type="text" name="toolsText">
-        <label for="opSysText" class="info">Operating Systems:</label>
-        <input id="opSysText" type="text" name="opSysText">
+        <label for="statementText" class="info">Objective Statement:
+          <span>Write a summary of your experiences, job-specific skills, and education while keeping it short and powerful. Start the first sentence with your area of expertise, “____ developer.”</span>
+        </label>
+        <input id="statementText" type="text" name="statementText" placeholder="Enter a short career objective." style="width:1250px">
         <input type="submit" id="submitBtn">
       </fieldset>
     </form>
-
   </div>
   <div id="2">
-    <form id="projectForm">
-      <fieldset>
-        <label for="projectNameText" class="info">Project Name:</label>
-        <input id="projectNameText" type="text" name="projectNameText">
-        <label for="projectDateText" class="info">Date:</label>
-        <input id="projectDateText" type="text" name="projectDateText">
-        <label for="projectLinkText" class="info">Project Link:</label>
-        <input id="projectLinkText" type="text" name="projectLinkText">
-        <label for="projectDescriptionText" class="info">Project Description:</label>
-        <input id="projectDescriptionText" type="text" name="projectDescriptionText">
-        <label for="languagesUsedText" class="info">Languages Used:</label>
-        <input id="languagesUsedText" type="text" name="languagesUsedText">
-        <label for="PersContributionsText" class="info">Personal Contributions:</label>
-        <input id="PersContributionsText" type="text" name="PersContributionsText">
-        <input type="submit" id="submitBtn">
-      </fieldset>
-    </form>
-  </div>
-  <div id="3">
-    <form id="edForm">
-      <fieldset>
-        <label for="schoolText" class="info">School:</label>
-        <input id="schoolText" type="text" name="schoolText">
-        <label for="locationText" class="info">Location:</label>
-        <input id="locationText" type="text" name="locationText">
-        <label for="degreeText" class="info">Degree:</label>
-        <input id="degreeText" type="text" name="degreeText">
-        <label for="gradDateText" class="info">Graduation Date:</label>
-        <input id="gradDateText" type="text" name="gradDateText">
-        <input type="submit" id="submitBtn">
-      </fieldset>
-    </form>
-  </div>
-  <div id="4">
-    <form id="expForm">
-      <fieldset>
-        <label for="companyText" class="info">Company Name:</label>
-        <input id="companyText" type="text" name="companyText">
-        <label for="positionText" class="info">Position:</label>
-        <input id="positionText" type="text" name="positionText">
-        <label for="startText" class="info">Start Date:</label>
-        <input id="startText" type="text" name="startText">
-        <label for="endText" class="info">End Date:</label>
-        <input id="endText" type="text" name="endText">
-        <label for="actionText" class="info">Action:</label>
-        <input id="actionText" type="text" name="actionText">
-        <input type="submit" id="submitBtn">
-      </fieldset>
-    </form>
-  </div>
+      <form id="techSkillsForm">
+        <fieldset>
+          <label for="languagesText" class="info">Languages: <span>Tip: always put the language you want to use in your next job first!</span></label>
+          <input id="languagesText" type="text" name="languagesText" placeholder="Languages" style="width:350px">
+          <label for="toolsText" class="info">Tools: <span>Examples: Git, GitHub, VS Code</span></label>
+          <input id="toolsText" type="text" name="toolsText" placeholder="Tools" style="width:350px">
+          <label for="opSysText" class="info">Operating Systems: <span>Examples: OS X, Windows, Linux, Android, iOS</span></label>
+          <input id="opSysText" type="text" name="opSysText" placeholder="Operating Systems" style="width:350px">
+          <input type="submit" id="submitBtn">
+        </fieldset>
+      </form>
+  
+    </div>
+    <div id="3">
+      <form id="projectForm">
+        <fieldset>
+          <label for="projectNameText" class="info">Project Name: <span>Write the project(s) name</span></label>
+          <input id="projectNameText" type="text" name="projectNameText" placeholder="Project Name">
+          <label for="projectDateText" class="info">Date: <span>The month/year it was completed</span></label>
+          <input id="projectDateText" type="text" name="projectDateText" placeholder="Month Year">
+          <label for="projectLinkText" class="info">Link: <span>A link to it if applicable (e.g. git, heroku, app store), </span></label>
+          <input id="projectLinkText" type="text" name="projectLinkText" placeholder="Link to Project">
+          <label for="projectDescriptionText" class="info">Description: <span>A one line description of what it is</span></label>
+          <input id="projectDescriptionText" type="text" name="projectDescriptionText" placeholder="One sentence description" style="width:500px">
+          <label for="languagesUsedText" class="info">Languages Used: <span>The languages used to develop it</span></label>
+          <input id="languagesUsedText" type="text" name="languagesUsedText" placeholder="Languages Used" style="width:400px">
+          <label for="PersContributionsText" class="info">Project Details: <span>Your specific contributions. </span></label>
+          <input id="PersContributionsText" type="text" name="PersContributionsText" placeholder="Write individual statement" style="width:400px">
+          <input type="submit" id="submitBtn">
+        </fieldset>
+      </form>
+    </div>
+    <div id="4">
+      <form id="edForm">
+        <fieldset>
+          <label for="schoolText" class="info">School Name: <span>For each higher-education school that you attended (i.e. not high-school) list the school’s name</span></label>
+          <input id="schoolText" type="text" name="schoolText" placeholder="Institution Name">
+          <label for="locationText" class="info">Location: <span>The city and state that it was located in</span></label>
+          <input id="locationText" type="text" name="locationText" placeholder="City, State">
+          <label for="degreeText" class="info">Degree/Program: <span>Any certificate or degree that you obtained if applicable, if not applicable write “course work completed in ____”, and the subject that you studied.</span></label>
+          <input id="degreeText" type="text" name="degreeText" placeholder="Degree, Certificate or Program" style="width:450px">
+          <label for="gradDateText" class="info">Graduation Date: <span>Last month/year of attendance</span></label>
+          <input id="gradDateText" type="text" name="gradDateText" placeholder="Year">
+          <input type="submit" id="submitBtn">
+        </fieldset>
+      </form>
+    </div>
+    <div id="5">
+      <form id="expForm">
+        <fieldset>
+          <label for="companyText" class="info">Employer Name: <span>For each company where you were employed, list the company name</span></label>
+          <input id="companyText" type="text" name="companyText" placeholder="Employer Name">
+          <label for="positionText" class="info">Position Title: <span>List your position title</span></label>
+          <input id="positionText" type="text" name="positionText" placeholder="Position or Title">
+          <label for="startText" class="info">Start Date: <span>Month/Year you started</span></label>
+          <input id="startText" type="text" name="startText" placeholder="Year or Month, Year">
+          <label for="endText" class="info">End Date: <span>Month/Year you stopped</span></label>
+          <input id="endText" type="text" name="endText" placeholder="Year or Month, Year">
+          <label for="actionText" class="info">Responsibilities: <span>At most three bullet points, each no more than two lines, describing your relevant responsibilities and accomplishments.</span></label>
+          <input id="actionText" type="text" name="actionText" placeholder="Write individual statements, click ' ' " style="width:550px">
+          <input type="submit" id="submitBtn">
+        </fieldset>
+      </form>
+    </div>
 
   <br>
 
-
   <div id="resume">
-      <section id="personalInfo">
-      </section>
-  
-      <hr>
-  
-      <section id="statement">
-  
-      </section>
-  
-      <section id="technicalSkills">
-      </section>
-  
-      <section id="projects">
-      </section>
-  
-      <section id="education">
-      </section>
-  
-      <section id="experience">
-      </section>
+
+    <div id="editField1">
+      <div class="wrapper"></div>
     </div>
-  
-  
+
+    <div class="bigwrapper">
+
+      <section id="personalInfo" class="fieldSet"></section>
+      <div class="wrapper"></div>
+    </div>
+
+    <hr>
+
+    <div class="bigwrapper">
+      <div class="wrapper"></div>
+      <section id="statement" class="fieldSet"></section>
+    </div>
+
+    <div class="bigwrapper">
+      <div class="wrapper"></div>
+      <section id="technicalSkills" class="fieldSet"></section>
+    </div>
+
+    <div class="bigwrapper">
+      <div class="wrapper"></div>
+      <section id="projects" class="fieldSet"></section>
+    </div>
+
+    <div class="bigwrapper">
+      <div class="wrapper"></div>
+      <section id="education" class="fieldSet"></section>
+    </div>
+
+    <div class="bigwrapper">
+      <div class="wrapper"></div>
+      <section id="experience" class="fieldSet"></section>
+    </div>
+
+  </div>
 
 
-<!-- <iframe src="resume.html" width="1000" height="1000"></iframe> -->
+
+
+  <!-- <iframe src="resume.html" width="1000" height="1000"></iframe> -->
 
 
   <script src="js/app.js"></script>
