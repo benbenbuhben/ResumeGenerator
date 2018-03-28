@@ -1,10 +1,15 @@
 header {
   margin-bottom: -200px;
 }
+
+#header-nav li a {
+  color: black;
+}
+
 #resume {
   font-family: sans-serif;
   margin: 0 auto;
-  width: 850px;
+  width: 850px;d
   height: 1100px;
   padding-left: 100px;
   padding-right: 100px;
@@ -18,7 +23,7 @@ header {
   height: 250px;
   right: 10;
   position: relative;
-  top: 150px;
+  top: 350px;
   width: 175px;
 }
 
