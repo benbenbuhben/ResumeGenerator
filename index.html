@@ -2,76 +2,84 @@
 <html>
 
 <head>
- <meta charset="utf-8">
- <title>Resume Hacker</title>
- <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
- <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
- <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
- </head>
- <main>
-   <header>
-     <nav id="header-nav">
-       <img src="http://via.placeholder.com/70x70" id="logo"></img>
-       <ul>
-         <li><a href="#">Homepage</a></li>
-         <li><a href="#">Resume Generator</a></li>
-         <li><a href="#">About The Team</a></li>
-       </ul>
-     </nav>
-   </header>
-
-   <body>
-  <nav id="sectionTabs">
-    <ul>
-      <li id="infoTab" class="tab">Personal Information</li>
-      <li id="statementTab" class="tab">Objective Statement</li>
-      <li id="techTab" class="tab">Technical Skills</li>
-      <li id="projTab" class="tab">Projects</li>
-      <li id="edTab" class="tab">Education</li>
-      <li id="expTab" class="tab">Experience</li>
-      <!-- <li>
-        <a href="resume.html"> Preview </a>
-      </li> -->
-    </ul>
-
-  </nav>
-</header>
-
+  <title>Resume Hacker</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+</head>
 
 <body>
+  
+    <header>
+      <nav id="header-nav">
+        <img src="http://via.placeholder.com/70x70" id="logo"></img>
+        <ul>
+          <li>
+            <a href="#">Homepage</a>
+          </li>
+          <li>
+            <a href="#">Resume Generator</a>
+          </li>
+          <li>
+            <a href="#">About The Team</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <nav id="sectionTabs">
+      <ul>
+        <li id="infoTab" class="tab">Personal Information</li>
+        <li id="statementTab" class="tab">Objective Statement</li>
+        <li id="techTab" class="tab">Technical Skills</li>
+        <li id="projTab" class="tab">Projects</li>
+        <li id="edTab" class="tab">Education</li>
+        <li id="expTab" class="tab">Experience</li>
+        <!-- <li>
+        <a href="resume.html"> Preview </a>
+      </li> -->
+      </ul>
+
+    </nav>
+
+   </main>
+
     <div id="0">
-        <form id="persInfoForm">
-          <fieldset>
-            <label for="nameText" class="info">Name: <span>Type your full name</span></label>
-            <input id="nameText" type="text" name="nameText" placeholder="Full Name">
-            <label for="careerText" class="info">Position: <span>Add a title to let the reader know what you do immediately</span></label>
-            <input id="careerText" type="text" name="careerText" placeholder="Desired Position">
-            <label for="residenceText" class="info">Current Residence: <span>Add your city and state only (NOT physical address)</span></label>
-            <input id="residenceText" type="text" name="residenceText" placeholder="City, State">
-            <label for="emailText" class="info">E-mail: <span>Type your email address</span></label>
-            <input id="emailText" type="text" name="emailText" placeholder="Email Address">
-            <label for="phoneText" class="info">Phone: <span>Enter your phone number</span></label>
-            <input id="phoneText" type="text" name="phoneText" placeholder="999-999-9999">
-            <label for="linkedInText" class="info">Linked In: <span>Include a hyperlink to your personalized LinkedIn URL</span></label>
-            <input id="linkedInText" type="text" name="linkedInText" placeholder="Linked In URL">
-            <label for="gitHubText" class="info">GitHub: <span>Include a hyperlink to your GitHub account URL</span></label>
-            <input id="gitHubText" type="text" name="gitHubText" placeholder="Git Hub URL">
-            <input type="submit" id="submitBtn">
-          </fieldset>
-        </form>
-      </div>
-  <div id="1">
-    <form id="statementForm">
-      <fieldset>
-        <label for="statementText" class="info">Objective Statement:
-          <span>Write a summary of your experiences, job-specific skills, and education while keeping it short and powerful. Start the first sentence with your area of expertise, “____ developer.”</span>
-        </label>
-        <input id="statementText" type="text" name="statementText" placeholder="Enter a short career objective." style="width:1250px">
-        <input type="submit" id="submitBtn">
-      </fieldset>
-    </form>
-  </div>
-  <div id="2">
+      <form id="persInfoForm">
+        <fieldset>
+          <label for="nameText" class="info">Name:
+            <span>Type your full name</span>
+          </label>
+          <input id="nameText" class="persInfoClass" type="text" name="nameText" placeholder="Full Name">
+          <label for="careerText" class="info">Position:</label>
+          <input id="careerText" class="persInfoClass" type="text" name="careerText" placeholder="Desired Position">
+          <label for="residenceText" class="info">Current Residence:</label>
+          <input id="residenceText" class="persInfoClass" type="text" name="residenceText" placeholder="City, State">
+          <label for="emailText" class="info">E-mail:</label>
+          <input id="emailText" class="persInfoClass" type="text" name="emailText" placeholder="Email Address">
+          <label for="phoneText" class="info">Phone:</label>
+          <input id="phoneText" class="persInfoClass" type="text" name="phoneText" placeholder="999-999-9999">
+          <label for="linkedInText" class="info">Linked In:</label>
+          <input id="linkedInText" class="persInfoClass" type="text" name="linkedInText" placeholder="Linked In URL">
+          <label for="gitHubText" class="info">GitHub:</label>
+          <input id="gitHubText" class="persInfoClass" type="text" name="gitHubText" placeholder="Git Hub URL">
+          <input type="submit" id="submitBtn">
+        </fieldset>
+      </form>
+    </div>
+    <div id="1">
+      <form id="statementForm">
+        <fieldset>
+          <label for="statementText" class="info">Objective Statement:
+            <span>Type your objective</span>
+          </label>
+          <input id="statementText" type="text" name="statementText" placeholder="Enter a short career objective.">
+          <input type="submit" id="submitBtn">
+        </fieldset>
+      </form>
+    </div>
+    <div id="2">
       <form id="techSkillsForm">
         <fieldset>
           <label for="languagesText" class="info">Languages: <span>Tip: always put the language you want to use in your next job first!</span></label>
@@ -83,7 +91,7 @@
           <input type="submit" id="submitBtn">
         </fieldset>
       </form>
-  
+
     </div>
     <div id="3">
       <form id="projectForm">
@@ -137,56 +145,57 @@
       </form>
     </div>
 
-  <br>
+    <br>
 
-  <div id="resume">
+    <!-- <div id="resume">
 
-    <div id="editField1">
-      <div class="wrapper"></div>
+      <div id="editField1">
+        <div class="wrapper"></div>
+      </div>
+
+      <div class="bigwrapper">
+
+        <section id="personalInfo" class="fieldSet"></section>
+        <div class="wrapper"></div>
+      </div>
+
+      <hr>
+
+      <div class="bigwrapper">
+        <div class="wrapper"></div>
+        <section id="statement" class="fieldSet"></section>
+      </div>
+
+      <div class="bigwrapper">
+        <div class="wrapper"></div>
+        <section id="technicalSkills" class="fieldSet"></section>
+      </div>
+
+      <div class="bigwrapper">
+        <div class="wrapper"></div>
+        <section id="projects" class="fieldSet"></section>
+      </div>
+
+      <div class="bigwrapper">
+        <div class="wrapper"></div>
+        <section id="education" class="fieldSet"></section>
+      </div>
+
+      <div class="bigwrapper">
+        <div class="wrapper"></div>
+        <section id="experience" class="fieldSet"></section>
+      </div>
+
     </div>
-
-    <div class="bigwrapper">
-
-      <section id="personalInfo" class="fieldSet"></section>
-      <div class="wrapper"></div>
-    </div>
-
-    <hr>
-
-    <div class="bigwrapper">
-      <div class="wrapper"></div>
-      <section id="statement" class="fieldSet"></section>
-    </div>
-
-    <div class="bigwrapper">
-      <div class="wrapper"></div>
-      <section id="technicalSkills" class="fieldSet"></section>
-    </div>
-
-    <div class="bigwrapper">
-      <div class="wrapper"></div>
-      <section id="projects" class="fieldSet"></section>
-    </div>
-
-    <div class="bigwrapper">
-      <div class="wrapper"></div>
-      <section id="education" class="fieldSet"></section>
-    </div>
-
-    <div class="bigwrapper">
-      <div class="wrapper"></div>
-      <section id="experience" class="fieldSet"></section>
-    </div>
-
-  </div>
+ -->
 
 
 
+  <iframe src="resume.html" id="preview" width="1000" height="1000"></iframe>
 
-  <!-- <iframe src="resume.html" width="1000" height="1000"></iframe> -->
-
-
+  </main>
   <script src="js/app.js"></script>
+  <!-- <script src="js/resume.js"></script> -->
 </body>
 
 </html>
