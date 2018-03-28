@@ -39,7 +39,12 @@ var UserData = {
   }]
 };
 
+loadLS();
 
+function saveToLS() {
+  var saveData = JSON.stringify(UserData);
+  localStorage.setItem('userLogs', saveData);
+}
 
 function contentGen(parentElID, childEl, userText) {
   var parentVar = document.getElementById(parentElID);
@@ -101,11 +106,9 @@ function handleSubmit(event) {
   UserData.persInfo.email = emailInput;
   UserData.persInfo.phone = phoneInput;
   
-  genAllContent();
+  saveToLS();
 
 }
-
-saveToLS();
 
 function handleSubmit2(event) {
   event.preventDefault();
@@ -125,8 +128,7 @@ function handleSubmit3(event) {
   UserData.techSkills.tools = toolsInput;
   UserData.techSkills.opSys = opSysInput;
 
-  genAllContent();
-
+  saveToLS();
 }
 
 function handleSubmit4(event) {
@@ -162,8 +164,7 @@ function handleSubmit4(event) {
     projectSelect[i].value = '';
   }
 
-  genAllContent();
-
+  saveToLS();
 }
 
 function handleSubmit5(event) {
@@ -182,8 +183,7 @@ function handleSubmit5(event) {
   UserData.yourEd.degree = degreeInput;
   UserData.yourEd.gradDate = gradDateInput;
 
-  genAllContent();
-
+  saveToLS();
 }
 
 function handleSubmit6(event) {
@@ -204,9 +204,7 @@ function handleSubmit6(event) {
   UserData.yourExp.endDate = endInput;
   UserData.yourExp.action = actionInput;
 
-
-  genAllContent();
-
+  saveToLS();
 }
 /////////////////////////
 function removeAllText(element) {
@@ -275,7 +273,6 @@ function genAllContent() {
     contentGen('projects', 'li', UserData.yourProjects.persContributions[i]);
     contentGen('projects', 'p', '');
 
-
   }
 
   contentGen('education', 'h3', 'Education');
@@ -289,12 +286,32 @@ function genAllContent() {
 
 }
 
-genAllContent();
 
-function saveToLS() {
-  var saveData = JSON.stringify(UserData);
-  localStorage.setItem('yourData', saveData);
+function loadLS (object) {
+  var yourData = localStorage.getItem('userLogs');
+  var yourResume = JSON.parse(yourData);
+  console.log(yourResume);
+  
+  //&& youResume.length was breaking code, left it out and functionality is working
+  if (yourResume) {
+    UserData = yourResume;
+    console.log('loaded from local storage');
+    return;
+  }
 }
+
+// function loadCart() {
+//   // TODO: Pull the cart (if it exists) from Local Storage and make available to this app 
+//   var yourCart = localStorage.getItem('cart');
+//   var usableItems = JSON.parse(yourCart);
+//   if (usableItems && usableItems.length) {
+//     Cart.allItems = usableItems;
+//     console.log('Loaded from Local Storage');
+//     return;
+//   }
+// }
+
+
 
 
 
