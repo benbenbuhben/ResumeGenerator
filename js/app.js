@@ -93,15 +93,23 @@ function handleSubmit(event) {
   var residenceInput = event.target.residenceText.value;
   var emailInput = event.target.emailText.value;
   var phoneInput = event.target.phoneText.value;
+  var linkedInInput = event.target.linkedInText.value;
+  var gitHubInput = event.target.gitHubText.value;
 
   UserData.persInfo.userName = nameInput;
   UserData.persInfo.careerTitle = careerInput;
   UserData.persInfo.city = residenceInput;
   UserData.persInfo.email = emailInput;
   UserData.persInfo.phone = phoneInput;
+  UserData.persInfo.linkedin = linkedInInput;
+  UserData.persInfo.github = gitHubInput;
 
-
+  
+  
+  addClickToEdit(0);
   genAllContent();
+
+  
 
 }
 
@@ -109,10 +117,14 @@ function handleSubmit2(event) {
   event.preventDefault();
   var statementInput = event.target.statementText.value;
   UserData.persStatement = statementInput;
+
+  addClickToEdit(1);
+  
   genAllContent();
 }
 
 function handleSubmit3(event) {
+
   event.preventDefault();
 
   var languagesInput = event.target.languagesText.value;
@@ -123,7 +135,11 @@ function handleSubmit3(event) {
   UserData.techSkills.tools = toolsInput;
   UserData.techSkills.opSys = opSysInput;
 
+  addClickToEdit(2);
+
   genAllContent();
+
+ 
 
 }
 
@@ -136,7 +152,6 @@ function handleSubmit4(event) {
   //var targetedInput = event.target;
   //var projectNameInput = event.target.projectNameText[targetedInput].value;
   var projectNameInput = event.target.projectNameText.value;
-  console.log(projectNameInput);
   var projectDateInput = event.target.projectDateText.value;
   var projectLinkInput = event.target.projectLinkText.value;
   var projectDescriptionInput = event.target.projectDescriptionText.value;
@@ -154,12 +169,11 @@ function handleSubmit4(event) {
   var projectSelect = document.getElementsByClassName('projectClass');
 
   for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
-    // console.log(projectSelect);
-    // console.log(projectSelect[0]);
-    // console.log(projectSelect[0].value);
-    // console.log(projectSelect[i]);
+    
     projectSelect[i].value = '';
   }
+
+  addClickToEdit(3);  
 
   genAllContent();
 
@@ -180,6 +194,9 @@ function handleSubmit5(event) {
   UserData.yourEd.location = locationInput;
   UserData.yourEd.degree = degreeInput;
   UserData.yourEd.gradDate = gradDateInput;
+
+  addClickToEdit(4);
+  
 
   genAllContent();
 
@@ -203,6 +220,7 @@ function handleSubmit6(event) {
   UserData.yourExp.endDate = endInput;
   UserData.yourExp.action = actionInput;
 
+  addClickToEdit(5);
 
   genAllContent();
 
@@ -231,7 +249,6 @@ function genAllContent() {
   formEl.addEventListener('submit', handleSubmit);
 
   var formEl2 = document.getElementById('statementForm');
-  console.log(formEl2);
   formEl2.addEventListener('submit', handleSubmit2);
 
   var formEl3 = document.getElementById('techSkillsForm');
@@ -250,13 +267,8 @@ function genAllContent() {
 
   contentGen('personalInfo', 'h1', UserData.persInfo.userName);
   contentGen('personalInfo', 'h2', UserData.persInfo.careerTitle);
-
-  //Eventually User Input, but for now hard-coded with placeholders
-  //var infoArray = ['city', 'email', 'phone'];
   contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
-
-  var infoLinks = ['linkedIn', 'gitHub', ];
-  contentGen('personalInfo', 'h3', infoLinks[0] + ' | ' + infoLinks[1]);
+  contentGen('personalInfo', 'h3', UserData.persInfo.linkedin + ' | ' + UserData.persInfo.github);
 
   contentGen('statement', 'p', UserData.persStatement);
 
@@ -288,6 +300,66 @@ function genAllContent() {
   contentGen('experience', 'li', UserData.yourExp.action);
 
 }
+
+function addClickToEdit(index) { //Will get added at the end of submit handlers (maybe as onhover callback)
+
+
+  var wrappers = document.getElementsByClassName('wrapper');
+  var bigwrappers = document.getElementsByClassName('bigwrapper');
+  var resume = document.getElementById('resume');
+  var fieldsets = document.getElementsByClassName('fieldSet');
+  console.log(fieldsets);
+  
+  
+
+  var deleteImg = document.createElement('img');
+  deleteImg.setAttribute('src', 'img/xIcon.svg');
+  //deleteImg.addEventListener('click', deleteFieldset);
+  deleteImg.setAttribute('class', 'delete');
+  deleteImg.setAttribute('height', '24px');
+  deleteImg.setAttribute('width', '24px');
+  deleteImg.style.visibility = 'hidden';
+  deleteImg.style.zIndex = '2';
+  wrappers[index].appendChild(deleteImg);
+ 
+
+  var editImg = document.createElement('img');
+  editImg.setAttribute('src', 'img/editPencil.svg');
+  //editImg.addEventListener('click', editFieldset);
+  editImg.setAttribute('class', 'editPencil');
+  editImg.setAttribute('height', '24px');
+  editImg.setAttribute('width', '24px');
+  editImg.style.visibility = 'hidden';
+  editImg.style.zIndex = '2';
+  wrappers[index].appendChild(editImg);
+
+  bigwrappers[index].addEventListener('mouseover', function(){
+    deleteImg.style.visibility = 'visible';
+    editImg.style.visibility = 'visible';
+    resume.style.opacity = '0.3';
+    fieldsets[index].style.zIndex = '3';
+    fieldsets[index].style.opacity = '1';
+    console.log(fieldsets[index].style.opacity);
+  });
+  bigwrappers[index].addEventListener('mouseout', function(){
+    deleteImg.style.visibility = 'hidden';
+    editImg.style.visibility = 'hidden';
+    resume.style.opacity = '1';
+  });
+  wrappers[index].addEventListener('mouseover', function(){
+    deleteImg.style.visibility = 'visible';
+    editImg.style.visibility = 'visible';
+  });
+  wrappers[index].addEventListener('mouseout', function(){
+    deleteImg.style.visibility = 'hidden';
+    editImg.style.visibility = 'hidden';
+  });
+  
+}
+
+
+
+
 
 genAllContent();
 
