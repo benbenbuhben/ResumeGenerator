@@ -24,30 +24,65 @@ var UserData = {
     languages: [],
     persContributions: []
   },
-  yourEd: [{ //might need an object constructor fcn here
+  yourEd: { //might need an object constructor fcn here
     school: '',
     location: '',
     degree: '',
     gradDate: '',
-  }],
-  yourExp: [{
+  },
+  yourExp: {
     company: '',
     position: '',
     startDate: '',
     endDate: '',
     action: []
-  }]
+  }
 };
 
+var formEl = document.getElementById('persInfoForm');
+formEl.addEventListener('submit', handleSubmit);
 
+var formEl2 = document.getElementById('statementForm');
+formEl2.addEventListener('submit', handleSubmit2);
 
-function contentGen(parentElID, childEl, userText) {
-  var parentVar = document.getElementById(parentElID);
-  var childVar = document.createElement(childEl);
-  childVar.addEventListener('submit', handleSubmit);
-  childVar.textContent = userText;
-  parentVar.appendChild(childVar);
+var formEl3 = document.getElementById('techSkillsForm');
+formEl3.addEventListener('submit', handleSubmit3);
+
+var formEl4 = document.getElementById('projectForm');
+formEl4.addEventListener('submit', handleSubmit4);
+
+var formEl5 = document.getElementById('edForm');
+formEl5.addEventListener('submit', handleSubmit5);
+
+var formEl6 = document.getElementById('expForm');
+formEl6.addEventListener('submit', handleSubmit6);
+
+//Load from Local Storage (if there is any) //maybe not necessary here?
+var yourData = localStorage.getItem('userData');
+var usableItems = JSON.parse(yourData);
+console.log('here is local storage');
+
+if (usableItems && Object.keys(usableItems).length) { //  
+  UserData = usableItems;
+  console.log('Loaded from Local Storage');
+  //return;
 }
+//////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////
+function saveToLS() {
+  var saveData = JSON.stringify(UserData);
+  localStorage.setItem('userData', saveData);
+}
+// //////////////////////////////////////////////////////////////////////
+saveToLS();
+
+//////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 var tabs = document.getElementsByClassName('tab');
 
@@ -85,8 +120,21 @@ function tabHandler(event) {
 
 }
 
+//////////////////////////////////////////////////////////////////////
+
 function handleSubmit(event) {
   event.preventDefault();
+
+  // var persInfoEls = document.getElementsById('persInfoClass');
+
+  // for (var i = 0; i < Object.keys(UserData.persInfo); i++) {
+  //   if (Object.keys(UserData.persInfo[i]) > 1) {
+  //     //reassign
+  //   }
+  // }
+
+
+  //currentName.value = UserData.persInfo.userName;
 
   var nameInput = event.target.nameText.value;
   var careerInput = event.target.careerText.value; //careerText is id for <input>
@@ -104,12 +152,14 @@ function handleSubmit(event) {
   UserData.persInfo.linkedin = linkedInInput;
   UserData.persInfo.github = gitHubInput;
 
-  
-  
-  addClickToEdit(0);
-  genAllContent();
 
-  
+
+  //addClickToEdit(0);
+
+  saveToLS();
+  //genAllContent(); //replace with savetols & trigger refresh (update source of iframe)
+  document.getElementById('preview').contentWindow.location.reload();
+
 
 }
 
@@ -118,9 +168,11 @@ function handleSubmit2(event) {
   var statementInput = event.target.statementText.value;
   UserData.persStatement = statementInput;
 
-  addClickToEdit(1);
-  
-  genAllContent();
+  //addClickToEdit(1);
+
+  saveToLS();
+  //genAllContent();
+  document.getElementById('preview').contentWindow.location.reload();
 }
 
 function handleSubmit3(event) {
@@ -135,11 +187,11 @@ function handleSubmit3(event) {
   UserData.techSkills.tools = toolsInput;
   UserData.techSkills.opSys = opSysInput;
 
-  addClickToEdit(2);
+  //addClickToEdit(2);
 
-  genAllContent();
-
- 
+  saveToLS();
+  //genAllContent();
+  document.getElementById('preview').contentWindow.location.reload();
 
 }
 
@@ -169,13 +221,15 @@ function handleSubmit4(event) {
   var projectSelect = document.getElementsByClassName('projectClass');
 
   for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
-    
+
     projectSelect[i].value = '';
   }
 
-  addClickToEdit(3);  
+  //addClickToEdit(3);
 
-  genAllContent();
+  saveToLS();
+  //genAllContent();
+  document.getElementById('preview').contentWindow.location.reload();
 
 }
 
@@ -195,10 +249,11 @@ function handleSubmit5(event) {
   UserData.yourEd.degree = degreeInput;
   UserData.yourEd.gradDate = gradDateInput;
 
-  addClickToEdit(4);
-  
+  //addClickToEdit(4);
 
-  genAllContent();
+  saveToLS();
+  //genAllContent(); //need to comment this out
+  document.getElementById('preview').contentWindow.location.reload();
 
 }
 
@@ -220,148 +275,79 @@ function handleSubmit6(event) {
   UserData.yourExp.endDate = endInput;
   UserData.yourExp.action = actionInput;
 
-  addClickToEdit(5);
+  //addClickToEdit(5);
 
-  genAllContent();
+  saveToLS();
+  //genAllContent();
+  document.getElementById('preview').contentWindow.location.reload();
 
 }
+
 /////////////////////////
-function removeAllText(element) {
-  // loop through all the nodes of the element
-  var nodes = element.childNodes;
-  for (var i = 0; i < nodes.length; i++) {
-    var node = nodes[i];
-    // if it's a text node, remove it
-    if (node.nodeType === Node.TEXT_NODE) {
-      node.parentNode.removeChild(node);
-      i--; // have to update our incrementor since we just removed a node from childNodes
-    } else if (node.nodeType === Node.ELEMENT_NODE) {
-      removeAllText(node);
-    }
-  }
-}
-
-function genAllContent() {
-  var resume = document.getElementById('resume');
-  removeAllText(resume);
-
-  var formEl = document.getElementById('persInfoForm');
-  formEl.addEventListener('submit', handleSubmit);
-
-  var formEl2 = document.getElementById('statementForm');
-  formEl2.addEventListener('submit', handleSubmit2);
-
-  var formEl3 = document.getElementById('techSkillsForm');
-  formEl3.addEventListener('submit', handleSubmit3);
-
-  var formEl4 = document.getElementById('projectForm');
-  formEl4.addEventListener('submit', handleSubmit4);
-
-  var formEl5 = document.getElementById('edForm');
-  formEl5.addEventListener('submit', handleSubmit5);
-
-  var formEl6 = document.getElementById('expForm');
-  formEl6.addEventListener('submit', handleSubmit6);
 
 
 
-  contentGen('personalInfo', 'h1', UserData.persInfo.userName);
-  contentGen('personalInfo', 'h2', UserData.persInfo.careerTitle);
-  contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
-  contentGen('personalInfo', 'h3', UserData.persInfo.linkedin + ' | ' + UserData.persInfo.github);
-
-  contentGen('statement', 'p', UserData.persStatement);
-
-  contentGen('technicalSkills', 'h3', 'Technical Skills');
-  contentGen('technicalSkills', 'p', 'Languages: ' + UserData.techSkills.languages);
-  contentGen('technicalSkills', 'p', 'Tools: ' + UserData.techSkills.tools);
-  contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
-
-  contentGen('projects', 'h3', 'Projects');
-
-  for (var i = 0; i < UserData.yourProjects.projTitle.length; i++) {
-
-    contentGen('projects', 'h4', UserData.yourProjects.projTitle[i] + ' | ' + UserData.yourProjects.date[i] + ' | ' + UserData.yourProjects.url[i]);
-    contentGen('projects', 'p', UserData.yourProjects.description[i]);
-    contentGen('projects', 'li', 'Languages Used: ' + UserData.yourProjects.languages[i]);
-    contentGen('projects', 'li', UserData.yourProjects.persContributions[i]);
-    contentGen('projects', 'p', '');
+// function addClickToEdit(index) { //Will get added at the end of submit handlers (maybe as onhover callback)
 
 
-  }
-
-  contentGen('education', 'h3', 'Education');
-  contentGen('education', 'h4', UserData.yourEd.school + ' | ' + UserData.yourEd.location);
-  contentGen('education', 'p', UserData.yourEd.degree + ' | ' + UserData.yourEd.gradDate);
-
-
-  contentGen('experience', 'h3', 'Experience');
-  contentGen('experience', 'h4', UserData.yourExp.company + ' , ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
-  contentGen('experience', 'li', UserData.yourExp.action);
-
-}
-
-function addClickToEdit(index) { //Will get added at the end of submit handlers (maybe as onhover callback)
+//   var wrappers = document.getElementsByClassName('wrapper');
+//   var bigwrappers = document.getElementsByClassName('bigwrapper');
+//   var resume = document.getElementById('resume');
+//   var fieldsets = document.getElementsByClassName('fieldSet');
+//   console.log(fieldsets);
 
 
-  var wrappers = document.getElementsByClassName('wrapper');
-  var bigwrappers = document.getElementsByClassName('bigwrapper');
-  var resume = document.getElementById('resume');
-  var fieldsets = document.getElementsByClassName('fieldSet');
-  console.log(fieldsets);
-  
-  
 
-  var deleteImg = document.createElement('img');
-  deleteImg.setAttribute('src', 'img/xIcon.svg');
-  //deleteImg.addEventListener('click', deleteFieldset);
-  deleteImg.setAttribute('class', 'delete');
-  deleteImg.setAttribute('height', '24px');
-  deleteImg.setAttribute('width', '24px');
-  deleteImg.style.visibility = 'hidden';
-  deleteImg.style.zIndex = '2';
-  wrappers[index].appendChild(deleteImg);
- 
+//   var deleteImg = document.createElement('img');
+//   deleteImg.setAttribute('src', 'img/xIcon.svg');
+//   //deleteImg.addEventListener('click', deleteFieldset);
+//   deleteImg.setAttribute('class', 'delete');
+//   deleteImg.setAttribute('height', '24px');
+//   deleteImg.setAttribute('width', '24px');
+//   deleteImg.style.visibility = 'hidden';
+//   deleteImg.style.zIndex = '2';
+//   wrappers[index].appendChild(deleteImg);
 
-  var editImg = document.createElement('img');
-  editImg.setAttribute('src', 'img/editPencil.svg');
-  //editImg.addEventListener('click', editFieldset);
-  editImg.setAttribute('class', 'editPencil');
-  editImg.setAttribute('height', '24px');
-  editImg.setAttribute('width', '24px');
-  editImg.style.visibility = 'hidden';
-  editImg.style.zIndex = '2';
-  wrappers[index].appendChild(editImg);
 
-  bigwrappers[index].addEventListener('mouseover', function(){
-    deleteImg.style.visibility = 'visible';
-    editImg.style.visibility = 'visible';
-    resume.style.opacity = '0.3';
-    fieldsets[index].style.zIndex = '3';
-    fieldsets[index].style.opacity = '1';
-    console.log(fieldsets[index].style.opacity);
-  });
-  bigwrappers[index].addEventListener('mouseout', function(){
-    deleteImg.style.visibility = 'hidden';
-    editImg.style.visibility = 'hidden';
-    resume.style.opacity = '1';
-  });
-  wrappers[index].addEventListener('mouseover', function(){
-    deleteImg.style.visibility = 'visible';
-    editImg.style.visibility = 'visible';
-  });
-  wrappers[index].addEventListener('mouseout', function(){
-    deleteImg.style.visibility = 'hidden';
-    editImg.style.visibility = 'hidden';
-  });
-  
-}
+//   var editImg = document.createElement('img');
+//   editImg.setAttribute('src', 'img/editPencil.svg');
+//   //editImg.addEventListener('click', editFieldset);
+//   editImg.setAttribute('class', 'editPencil');
+//   editImg.setAttribute('height', '24px');
+//   editImg.setAttribute('width', '24px');
+//   editImg.style.visibility = 'hidden';
+//   editImg.style.zIndex = '2';
+//   wrappers[index].appendChild(editImg);
+
+//   bigwrappers[index].addEventListener('mouseover', function () {
+//     deleteImg.style.visibility = 'visible';
+//     editImg.style.visibility = 'visible';
+//     resume.style.opacity = '0.3';
+//     fieldsets[index].style.zIndex = '3';
+//     fieldsets[index].style.opacity = '1';
+//     console.log(fieldsets[index].style.opacity);
+//   });
+//   bigwrappers[index].addEventListener('mouseout', function () {
+//     deleteImg.style.visibility = 'hidden';
+//     editImg.style.visibility = 'hidden';
+//     resume.style.opacity = '1';
+//   });
+//   wrappers[index].addEventListener('mouseover', function () {
+//     deleteImg.style.visibility = 'visible';
+//     editImg.style.visibility = 'visible';
+//   });
+//   wrappers[index].addEventListener('mouseout', function () {
+//     deleteImg.style.visibility = 'hidden';
+//     editImg.style.visibility = 'hidden';
+//   });
+
+// }
 
 
 
 
 
-genAllContent();
+//genAllContent();
 
 
 
