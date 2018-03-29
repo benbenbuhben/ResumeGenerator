@@ -1,3 +1,6 @@
+* {
+  font-family: 'Helvetica', 'sans-serif';
+}
 header {
   margin-bottom: -200px;
   font-family: Helvetica;
@@ -33,7 +36,7 @@ main {
 #header-nav ul {
   position: relative;
   text-align: center;
-  right: 200px;
+  right: 150px;
   top: 40px;
 }
 

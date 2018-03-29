@@ -55,7 +55,7 @@ function genAllContent() {
   var resume = document.getElementById('resume');
   removeAllText(resume);
 
- 
+
   contentGen('personalInfo', 'h1', UserData.persInfo.userName);
   contentGen('personalInfo', 'h2', UserData.persInfo.careerTitle);
   contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
@@ -69,25 +69,90 @@ function genAllContent() {
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
   contentGen('projects', 'h3', 'Projects');
+
   for (var i = 0; i < UserData.yourProjects.projTitle.length; i++) {
+
     contentGen('projects', 'h4', UserData.yourProjects.projTitle[i] + ' | ' + UserData.yourProjects.date[i] + ' | ' + UserData.yourProjects.url[i]);
     contentGen('projects', 'p', UserData.yourProjects.description[i]);
     contentGen('projects', 'li', 'Languages Used: ' + UserData.yourProjects.languages[i]);
     contentGen('projects', 'li', UserData.yourProjects.persContributions[i]);
-   // contentGen('projects', 'p', '');
+    // contentGen('projects', 'p', '');
+
   }
 
   contentGen('education', 'h3', 'Education');
-  for (var k = 0; k < UserData.yourEd.school.length; k++) {
-    contentGen('education', 'h4', UserData.yourEd.school[k] + ' | ' + UserData.yourEd.location[k]);
-    contentGen('education', 'p', UserData.yourEd.degree[k] + ' | ' + UserData.yourEd.gradDate[k]);
+
+  for (var i = 0; i < UserData.yourEd.school.length; i++) {
+
+    contentGen('education', 'h4', UserData.yourEd.school[i] + ' | ' + UserData.yourEd.location[i]);
+    contentGen('education', 'p', UserData.yourEd.degree[i] + ' | ' + UserData.yourEd.gradDate[i]);
+
   }
 
   contentGen('experience', 'h3', 'Experience');
-  for (var j = j; j < UserData.yourExp.company.length; j++) {
-    contentGen('experience', 'h4', UserData.yourExp.company[j] + ' , ' + UserData.yourExp.position[j] + ' | ' + UserData.yourExp.startDate[j] + ' - ' + UserData.yourExp.endDate[j]);
-    contentGen('experience', 'li', UserData.yourExp.action[j]);
+
+  for (var i = 0; i < UserData.yourExp.company.length; i++) {
+
+    contentGen('experience', 'h4', UserData.yourExp.company[i] + ' , ' + UserData.yourExp.position[i] + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate[i]);
+    contentGen('experience', 'li', UserData.yourExp.action[i]);
+
   }
 }
+
+// function addClickToEdit(index) { //Will get added at the end of submit handlers (maybe as onhover callback)
+
+
+//   var wrappers = document.getElementsByClassName('wrapper');
+//   var bigwrappers = document.getElementsByClassName('bigwrapper');
+//   var resume = document.getElementById('resume');
+//   var fieldsets = document.getElementsByClassName('fieldSet');
+//   console.log(fieldsets);
+
+
+
+//   var deleteImg = document.createElement('img');
+//   deleteImg.setAttribute('src', 'img/xIcon.svg');
+//   //deleteImg.addEventListener('click', deleteFieldset);
+//   deleteImg.setAttribute('class', 'delete');
+//   deleteImg.setAttribute('height', '24px');
+//   deleteImg.setAttribute('width', '24px');
+//   deleteImg.style.visibility = 'hidden';
+//   deleteImg.style.zIndex = '2';
+//   wrappers[index].appendChild(deleteImg);
+
+
+//   var editImg = document.createElement('img');
+//   editImg.setAttribute('src', 'img/editPencil.svg');
+//   //editImg.addEventListener('click', editFieldset);
+//   editImg.setAttribute('class', 'editPencil');
+//   editImg.setAttribute('height', '24px');
+//   editImg.setAttribute('width', '24px');
+//   editImg.style.visibility = 'hidden';
+//   editImg.style.zIndex = '2';
+//   wrappers[index].appendChild(editImg);
+
+//   bigwrappers[index].addEventListener('mouseover', function () {
+//     deleteImg.style.visibility = 'visible';
+//     editImg.style.visibility = 'visible';
+//     resume.style.opacity = '0.3';
+//     fieldsets[index].style.zIndex = '3';
+//     fieldsets[index].style.opacity = '1';
+//     console.log(fieldsets[index].style.opacity);
+//   });
+//   bigwrappers[index].addEventListener('mouseout', function () {
+//     deleteImg.style.visibility = 'hidden';
+//     editImg.style.visibility = 'hidden';
+//     resume.style.opacity = '1';
+//   });
+//   wrappers[index].addEventListener('mouseover', function () {
+//     deleteImg.style.visibility = 'visible';
+//     editImg.style.visibility = 'visible';
+//   });
+//   wrappers[index].addEventListener('mouseout', function () {
+//     deleteImg.style.visibility = 'hidden';
+//     editImg.style.visibility = 'hidden';
+//   });
+
+// }
 
 genAllContent();

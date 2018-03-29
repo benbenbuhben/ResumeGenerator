@@ -133,7 +133,6 @@ function handleSubmit(event) {
   //   }
   // }
 
-
   //currentName.value = UserData.persInfo.userName;
 
   var nameInput = event.target.nameText.value;
