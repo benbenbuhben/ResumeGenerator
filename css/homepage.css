@@ -1,10 +1,11 @@
-header {
-  margin-bottom: -200px;
+body {
   font-family: Helvetica;
 }
 
-main {
+header {
+  height: 0;
   font-family: Helvetica;
+  width: 100%;
 }
 
 #header-nav {
@@ -13,10 +14,6 @@ main {
   height: 100px;
   width: 100%;
 }
-
-/* #persInfoForm{
-  margin-bottom:20px;
-} */
 
 #logo {
   height: auto;
@@ -29,7 +26,7 @@ main {
 #header-nav ul {
   position: relative;
   text-align: center;
-  right: 200px;
+  right: 150px;
   top: 40px;
 }
 
@@ -44,10 +41,37 @@ main {
 }
 
 #sectionOne {
-  background-color: red;
-  height: 500px;
+  background-image: 
+  linear-gradient(
+    rgba(79, 103, 116, 0.7),
+    rgba(89, 110, 128, 0.7)
+  ),
+  url("../assets/tech interview.jpg");
+  height: 100vh;
   width: 100%;
 }
+
+#sectionOne button {
+  background: linear-gradient(to left,#00d9f1, #4eddd6);
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  height: 60px;
+  left: 600px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  text-align: center;
+  top: 300px;
+  width: 220px;
+}
+
+#sectionOne button:hover{
+  background: linear-gradient(to right,#00d9f1, #4eddd6);
+  
+  }
 
 #create-resume {
   height: 75px;
