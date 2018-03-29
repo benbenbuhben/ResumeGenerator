@@ -25,18 +25,20 @@ var UserData = {
     persContributions: []
   },
   yourEd: { //might need an object constructor fcn here
-    school: '',
-    location: '',
-    degree: '',
-    gradDate: '',
+    school: [],
+    location: [],
+    degree: [],
+    gradDate: [],
   },
   yourExp: {
-    company: '',
-    position: '',
-    startDate: '',
-    endDate: '',
+    company: [],
+    position: [],
+    startDate: [],
+    endDate: [],
     action: []
-  }
+  },
+ // edit2hover: [],
+
 };
 
 var formEl = document.getElementById('persInfoForm');
@@ -78,10 +80,6 @@ function saveToLS() {
 saveToLS();
 
 //////////////////////////////////////////////////////////////////////
-
-
-
-
 
 
 var tabs = document.getElementsByClassName('tab');
@@ -153,12 +151,13 @@ function handleSubmit(event) {
   UserData.persInfo.github = gitHubInput;
 
 
-
-  //addClickToEdit(0);
+  // if (UserData.edit2hover.includes(0) === false) {
+  //   UserData.edit2hover.push(0);
+  // }
 
   saveToLS();
   //genAllContent(); //replace with savetols & trigger refresh (update source of iframe)
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 
 }
@@ -168,11 +167,13 @@ function handleSubmit2(event) {
   var statementInput = event.target.statementText.value;
   UserData.persStatement = statementInput;
 
-  //addClickToEdit(1);
+  // if (UserData.edit2hover.includes(1) === false) {
+  //   UserData.edit2hover.push(1);
+  // }
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 }
 
 function handleSubmit3(event) {
@@ -187,11 +188,13 @@ function handleSubmit3(event) {
   UserData.techSkills.tools = toolsInput;
   UserData.techSkills.opSys = opSysInput;
 
-  //addClickToEdit(2);
+  // if (UserData.edit2hover.includes(2) === false) {
+  //   UserData.edit2hover.push(2);
+  // }
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
@@ -218,18 +221,20 @@ function handleSubmit4(event) {
   UserData.yourProjects.languages.push(languagesUsedInput);
   UserData.yourProjects.persContributions.push(persContributionsInput);
 
-  var projectSelect = document.getElementsByClassName('projectClass');
+  // var projectSelect = document.getElementsByClassName('projectClass');
 
-  for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
+  // for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
 
-    projectSelect[i].value = '';
-  }
+  //   projectSelect[i].value = '';
+  // }
 
-  //addClickToEdit(3);
+  // if (UserData.edit2hover.includes(3) === false) {
+  //   UserData.edit2hover.push(3);
+  // }
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
@@ -244,16 +249,18 @@ function handleSubmit5(event) {
   var gradDateInput = event.target.gradDateText.value;
 
 
-  UserData.yourEd.school = schoolInput;
-  UserData.yourEd.location = locationInput;
-  UserData.yourEd.degree = degreeInput;
-  UserData.yourEd.gradDate = gradDateInput;
+  UserData.yourEd.school.push(schoolInput);
+  UserData.yourEd.location.push(locationInput);
+  UserData.yourEd.degree.push(degreeInput);
+  UserData.yourEd.gradDate.push(gradDateInput);
 
-  //addClickToEdit(4);
+  // if (UserData.edit2hover.includes(4) === false) {
+  //   UserData.edit2hover.push(4);
+  // }
 
   saveToLS();
   //genAllContent(); //need to comment this out
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
@@ -269,17 +276,19 @@ function handleSubmit6(event) {
   var actionInput = event.target.actionText.value;
 
 
-  UserData.yourExp.company = companyInput;
-  UserData.yourExp.position = positionInput;
-  UserData.yourExp.startDate = startInput;
-  UserData.yourExp.endDate = endInput;
-  UserData.yourExp.action = actionInput;
+  UserData.yourExp.company.push(companyInput);
+  UserData.yourExp.position.push(positionInput);
+  UserData.yourExp.startDate.push(startInput);
+  UserData.yourExp.endDate.push(endInput);
+  UserData.yourExp.action.push(actionInput);
 
-  //addClickToEdit(5);
+  // if (UserData.edit2hover.includes(5) === false) {
+  //   UserData.edit2hover.push(5);
+  // }
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  window.location.reload();
 
 }
 
@@ -287,61 +296,7 @@ function handleSubmit6(event) {
 
 
 
-// function addClickToEdit(index) { //Will get added at the end of submit handlers (maybe as onhover callback)
 
-
-//   var wrappers = document.getElementsByClassName('wrapper');
-//   var bigwrappers = document.getElementsByClassName('bigwrapper');
-//   var resume = document.getElementById('resume');
-//   var fieldsets = document.getElementsByClassName('fieldSet');
-//   console.log(fieldsets);
-
-
-
-//   var deleteImg = document.createElement('img');
-//   deleteImg.setAttribute('src', 'img/xIcon.svg');
-//   //deleteImg.addEventListener('click', deleteFieldset);
-//   deleteImg.setAttribute('class', 'delete');
-//   deleteImg.setAttribute('height', '24px');
-//   deleteImg.setAttribute('width', '24px');
-//   deleteImg.style.visibility = 'hidden';
-//   deleteImg.style.zIndex = '2';
-//   wrappers[index].appendChild(deleteImg);
-
-
-//   var editImg = document.createElement('img');
-//   editImg.setAttribute('src', 'img/editPencil.svg');
-//   //editImg.addEventListener('click', editFieldset);
-//   editImg.setAttribute('class', 'editPencil');
-//   editImg.setAttribute('height', '24px');
-//   editImg.setAttribute('width', '24px');
-//   editImg.style.visibility = 'hidden';
-//   editImg.style.zIndex = '2';
-//   wrappers[index].appendChild(editImg);
-
-//   bigwrappers[index].addEventListener('mouseover', function () {
-//     deleteImg.style.visibility = 'visible';
-//     editImg.style.visibility = 'visible';
-//     resume.style.opacity = '0.3';
-//     fieldsets[index].style.zIndex = '3';
-//     fieldsets[index].style.opacity = '1';
-//     console.log(fieldsets[index].style.opacity);
-//   });
-//   bigwrappers[index].addEventListener('mouseout', function () {
-//     deleteImg.style.visibility = 'hidden';
-//     editImg.style.visibility = 'hidden';
-//     resume.style.opacity = '1';
-//   });
-//   wrappers[index].addEventListener('mouseover', function () {
-//     deleteImg.style.visibility = 'visible';
-//     editImg.style.visibility = 'visible';
-//   });
-//   wrappers[index].addEventListener('mouseout', function () {
-//     deleteImg.style.visibility = 'hidden';
-//     editImg.style.visibility = 'hidden';
-//   });
-
-// }
 
 
 
