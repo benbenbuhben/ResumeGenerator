@@ -6,8 +6,53 @@ header {
   font-family: Helvetica;
 }
 
+body {
+  background-color: rgba(233, 241, 247, 0.466);
+}
+
 iframe {
   margin-left: 200px;
+  border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+
+#buttons {
+  position:relative;
+  width: 20%;
+  margin-bottom:20px;
+  left:80%;
+}
+
+button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+button {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+button {
+ 
 }
 
 main {
@@ -52,6 +97,7 @@ main {
 
 #resume {
   font-family: Arial, sans-serif;
+  background-color: white;
   margin: 0 auto;
   width: 850px;
   height: 1100px;
@@ -59,7 +105,7 @@ main {
   padding-right: 100px;
   /* padding-top: 50px; */
   padding-bottom: 50px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   line-height: 1.5em;
 }
 
@@ -67,7 +113,7 @@ main {
   height: 250px;
   right: 10;
   position: relative;
-  top: 400px;
+  top: 500px;
   width: 175px;
 }
 
@@ -122,8 +168,6 @@ main {
   margin-left: 5px;
   opacity: 1px;
 }
-
-
 
 #personalInfo {
   text-align: center;
@@ -217,7 +261,7 @@ input {
 }
 
 #editField1 {
-  position:relative;
+  position: relative;
   width: 100%;
   height: 50px;
   padding: 0;
@@ -229,7 +273,7 @@ hr {
 }
 
 .bigwrapper {
-  position:relative;
+  position: relative;
 }
 
 .wrapper {
@@ -238,10 +282,8 @@ hr {
   left: 0;
 }
 
-
-
 .editPencil {
-  padding-left:10px;
+  padding-left: 10px;
 }
 
 #personalInfo:hover {
