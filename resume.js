@@ -1,39 +1,65 @@
+// loadfromLS
+
+// genallcontent(
+
+//   dfsdsf
+//   sfbsfbsf
+//   sdfbfsg
+// )
+
+// genallcontent()
+
 'use strict';
-var UserData = {};
-function loadLS (object) {
-  var yourData = localStorage.getItem('userLogs');
-  var yourResume = JSON.parse(yourData);
-  console.log(yourResume);
-  
-  //&& youResume.length was breaking code, left it out and functionality is working
-  if (yourResume) {
-    UserData = yourResume;
-    console.log('loaded from local storage');
-    return;
-  }
+
+//var UserData = {};
+
+//function loadLS() {
+var yourData = localStorage.getItem('userData');
+console.log(yourData);
+var usableItems = JSON.parse(yourData);
+console.log('here is local storage');
+
+if (usableItems && Object.keys(usableItems).length) { //  
+  var UserData = usableItems;
+  console.log('Loaded from Local Storage');
+  //return;
 }
+//}
+
+//loadLS();
 
 function contentGen(parentElID, childEl, userText) {
   var parentVar = document.getElementById(parentElID);
   var childVar = document.createElement(childEl);
-  // childVar.addEventListener('submit', handleSubmit);
+  //childVar.addEventListener('submit', handleSubmit);
   childVar.textContent = userText;
   parentVar.appendChild(childVar);
 }
 
+function removeAllText(element) {
+  // loop through all the nodes of the element
+  var nodes = element.childNodes;
+  for (var i = 0; i < nodes.length; i++) {
+    var node = nodes[i];
+    // if it's a text node, remove it
+    if (node.nodeType === Node.TEXT_NODE) {
+      node.parentNode.removeChild(node);
+      i--; // have to update our incrementor since we just removed a node from childNodes
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      removeAllText(node);
+    }
+  }
+}
 
 function genAllContent() {
   var resume = document.getElementById('resume');
+  removeAllText(resume);
 
+ 
   contentGen('personalInfo', 'h1', UserData.persInfo.userName);
   contentGen('personalInfo', 'h2', UserData.persInfo.careerTitle);
-
-  //Eventually User Input, but for now hard-coded with placeholders
-  //var infoArray = ['city', 'email', 'phone'];
   contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
-
-  var infoLinks = ['linkedIn', 'gitHub', ];
-  contentGen('personalInfo', 'h3', infoLinks[0] + ' | ' + infoLinks[1]);
+  contentGen('personalInfo', 'h3', UserData.persInfo.linkedin + ' | ' + UserData.persInfo.github);
 
   contentGen('statement', 'p', UserData.persStatement);
 
@@ -50,7 +76,7 @@ function genAllContent() {
     contentGen('projects', 'p', UserData.yourProjects.description[i]);
     contentGen('projects', 'li', 'Languages Used: ' + UserData.yourProjects.languages[i]);
     contentGen('projects', 'li', UserData.yourProjects.persContributions[i]);
-    contentGen('projects', 'p', '');
+   // contentGen('projects', 'p', '');
 
 
   }
@@ -66,5 +92,4 @@ function genAllContent() {
 
 }
 
-loadLS();
 genAllContent();

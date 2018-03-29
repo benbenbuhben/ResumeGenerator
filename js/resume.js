@@ -69,27 +69,25 @@ function genAllContent() {
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
   contentGen('projects', 'h3', 'Projects');
-
   for (var i = 0; i < UserData.yourProjects.projTitle.length; i++) {
-
     contentGen('projects', 'h4', UserData.yourProjects.projTitle[i] + ' | ' + UserData.yourProjects.date[i] + ' | ' + UserData.yourProjects.url[i]);
     contentGen('projects', 'p', UserData.yourProjects.description[i]);
     contentGen('projects', 'li', 'Languages Used: ' + UserData.yourProjects.languages[i]);
     contentGen('projects', 'li', UserData.yourProjects.persContributions[i]);
    // contentGen('projects', 'p', '');
-
-
   }
 
   contentGen('education', 'h3', 'Education');
-  contentGen('education', 'h4', UserData.yourEd.school + ' | ' + UserData.yourEd.location);
-  contentGen('education', 'p', UserData.yourEd.degree + ' | ' + UserData.yourEd.gradDate);
-
+  for (var k = 0; k < UserData.yourEd.school.length; k++) {
+    contentGen('education', 'h4', UserData.yourEd.school[k] + ' | ' + UserData.yourEd.location[k]);
+    contentGen('education', 'p', UserData.yourEd.degree[k] + ' | ' + UserData.yourEd.gradDate[k]);
+  }
 
   contentGen('experience', 'h3', 'Experience');
-  contentGen('experience', 'h4', UserData.yourExp.company + ' , ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
-  contentGen('experience', 'li', UserData.yourExp.action);
-
+  for (var j = j; j < UserData.yourExp.company.length; j++) {
+    contentGen('experience', 'h4', UserData.yourExp.company[j] + ' , ' + UserData.yourExp.position[j] + ' | ' + UserData.yourExp.startDate[j] + ' - ' + UserData.yourExp.endDate[j]);
+    contentGen('experience', 'li', UserData.yourExp.action[j]);
+  }
 }
 
 genAllContent();

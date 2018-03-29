@@ -24,20 +24,25 @@ var UserData = {
     languages: [],
     persContributions: []
   },
-  yourEd: { //might need an object constructor fcn here
-    school: '',
-    location: '',
-    degree: '',
-    gradDate: '',
+  yourEd: {
+    school: [],
+    location: [],
+    degree: [],
+    gradDate: [],
   },
   yourExp: {
-    company: '',
-    position: '',
-    startDate: '',
-    endDate: '',
+    company: [],
+    position: [],
+    startDate: [],
+    endDate: [],
     action: []
   }
 };
+
+function reload() {
+  var url = "resume.html?" + Math.random();
+  document.getElementById('preview').src = url;
+}
 
 var formEl = document.getElementById('persInfoForm');
 formEl.addEventListener('submit', handleSubmit);
@@ -78,11 +83,6 @@ function saveToLS() {
 saveToLS();
 
 //////////////////////////////////////////////////////////////////////
-
-
-
-
-
 
 var tabs = document.getElementsByClassName('tab');
 
@@ -158,12 +158,12 @@ function handleSubmit(event) {
 
   saveToLS();
   //genAllContent(); //replace with savetols & trigger refresh (update source of iframe)
-  document.getElementById('preview').contentWindow.location.reload();
-
+  reload();
+  document.getElementById('persInfoForm').reset();
 
 }
 
-function handleSubmit3(event) {
+function handleSubmit2(event) {
   event.preventDefault();
   var statementInput = event.target.statementText.value;
   UserData.persStatement = statementInput;
@@ -172,7 +172,8 @@ function handleSubmit3(event) {
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
+  reload();
+  document.getElementById('statementForm').reset();
 }
 
 function handleSubmit3(event) {
@@ -191,42 +192,8 @@ function handleSubmit3(event) {
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
-
-function handleSubmit4(event) {
-  event.preventDefault();
-
-  // var resume = document.getElementById('resume');
-  // removeAllText(resume);
-
-  //var targetedInput = event.target;
-  //var projectNameInput = event.target.projectNameText[targetedInput].value;
-  var projectNameInput = event.target.projectNameText.value;
-  var projectDateInput = event.target.projectDateText.value;
-  var projectLinkInput = event.target.projectLinkText.value;
-  var projectDescriptionInput = event.target.projectDescriptionText.value;
-  var languagesUsedInput = event.target.languagesUsedText.value;
-  var persContributionsInput = event.target.PersContributionsText.value;
-
-
-  UserData.yourProjects.projTitle.push(projectNameInput);
-  UserData.yourProjects.date.push(projectDateInput);
-  UserData.yourProjects.url.push(projectLinkInput);
-  UserData.yourProjects.description.push(projectDescriptionInput);
-  UserData.yourProjects.languages.push(languagesUsedInput);
-  UserData.yourProjects.persContributions.push(persContributionsInput);
-
-  var projectSelect = document.getElementsByClassName('projectClass');
-
-  for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
-    // console.log(projectSelect);
-    // console.log(projectSelect[0]);
-    // console.log(projectSelect[0].value);
-    // console.log(projectSelect[i]);
-    projectSelect[i].value = '';
-  }
-
-  saveToLS();
+  reload();
+  document.getElementById('techSkillsForm').reset();
 }
 
 function handleSubmit4(event) {
@@ -251,52 +218,39 @@ function handleSubmit4(event) {
   UserData.yourProjects.description.push(projectDescriptionInput);
   UserData.yourProjects.languages.push(languagesUsedInput);
   UserData.yourProjects.persContributions.push(persContributionsInput);
-
-  var projectSelect = document.getElementsByClassName('projectClass');
-
-  for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
-
-    projectSelect[i].value = '';
-  }
 
   //addClickToEdit(3);
 
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
-
+  reload();
+  document.getElementById('projectForm').reset();
 }
 
 function handleSubmit5(event) {
   event.preventDefault();
-
-
 
   var schoolInput = event.target.schoolText.value;
   var locationInput = event.target.locationText.value;
   var degreeInput = event.target.degreeText.value;
   var gradDateInput = event.target.gradDateText.value;
 
-  var formEl6 = document.getElementById('expForm');
-  formEl6.addEventListener('submit', handleSubmit6);
 
-  UserData.yourEd.school = schoolInput;
-  UserData.yourEd.location = locationInput;
-  UserData.yourEd.degree = degreeInput;
-  UserData.yourEd.gradDate = gradDateInput;
+  UserData.yourEd.school.push(schoolInput);
+  UserData.yourEd.location.push(locationInput);
+  UserData.yourEd.degree.push(degreeInput);
+  UserData.yourEd.gradDate.push(gradDateInput);
 
   //addClickToEdit(4);
 
   saveToLS();
   //genAllContent(); //need to comment this out
-  document.getElementById('preview').contentWindow.location.reload();
-
+  reload();
+  document.getElementById('edForm').reset();
 }
 
 function handleSubmit6(event) {
   event.preventDefault();
-
-
 
   var companyInput = event.target.companyText.value;
   var positionInput = event.target.positionText.value;
@@ -305,18 +259,17 @@ function handleSubmit6(event) {
   var actionInput = event.target.actionText.value;
 
 
-  UserData.yourExp.company = companyInput;
-  UserData.yourExp.position = positionInput;
-  UserData.yourExp.startDate = startInput;
-  UserData.yourExp.endDate = endInput;
-  UserData.yourExp.action = actionInput;
+  UserData.yourExp.company.push(companyInput);
+  UserData.yourExp.position.push(positionInput);
+  UserData.yourExp.startDate.push(startInput);
+  UserData.yourExp.endDate.push(endInput);
+  UserData.yourExp.action.push(actionInput);
 
   //addClickToEdit(5);
-
   saveToLS();
   //genAllContent();
-  document.getElementById('preview').contentWindow.location.reload();
-
+  reload();
+  document.getElementById('expForm').reset();
 }
 
 /////////////////////////
