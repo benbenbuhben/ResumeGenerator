@@ -8,3 +8,48 @@ body {
   background-image: url(https://pixabay.com/get/eb32b00b21f2073ed1534705fb0938c9bd22ffd41cb3134291f4c870a1/vintage-2714966_1920.jpg);
   font-size: 16px;
   color: #fff;
+}
+header {
+  background-color: rgb(24, 23, 23);
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+li a {
+  color: white;
+  text-decoration: none;
+}
+ul li {
+  display: inline-block;
+  margin-left: 75px;
+}
+ul {
+  position: relative;
+  text-align: center;
+  right: 200px;
+  top: 40px;
+}
+ header img {
+  height: auto;
+  left: 100px;
+  position: absolute;
+  top: 10px;
+  width: 200px;
+}
+
+section {
+  font-size: 20px;
+  background-color: rgb(24, 23, 23);
+  display: inline-block;
+  height: 70px;
+  width: 100%;
+  text-align: center
+}
+section p {
+  background-color: rgb(24, 23, 23);
+  display: inline-block;
+  height: 70px;
+  width: 100%;
+}
+
+

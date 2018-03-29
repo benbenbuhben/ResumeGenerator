@@ -10,10 +10,10 @@ var imgPortraits = [];
 
 var canvasWidth = 960;
 var canvasHeight = 500;
-var imgSize0 = 180;
-var imgSize1 = 180;
-var imgSize2 = 180;
-var imgSize3 = 180;
+var imgSize0 = 200;
+var imgSize1 = 200;
+var imgSize2 = 200;
+var imgSize3 = 200;
 
 var mouseX;
 var mouseY;
@@ -75,7 +75,7 @@ function displayBio(){
 
 
   }else if (mouseX > 685 && mouseX < 830 && mouseY > 127 && mouseY < 272){
-    bioH.textContent = 'khalil';
+    bioH.textContent = 'Khalil';
     bioP.textContent = 'info';
   }
 }
