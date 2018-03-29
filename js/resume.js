@@ -61,7 +61,7 @@ function genAllContent() {
   contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
   contentGen('personalInfo', 'h3', UserData.persInfo.linkedin + ' | ' + UserData.persInfo.github);
 
-  contentGen('statement', 'p', UserData.persStatement);
+  contentGen('statement', 'h5', UserData.persStatement);
 
   contentGen('technicalSkills', 'h3', 'Technical Skills');
   contentGen('technicalSkills', 'p', 'Languages: ' + UserData.techSkills.languages);
@@ -86,6 +86,7 @@ function genAllContent() {
 
     contentGen('education', 'h4', UserData.yourEd.school[i] + ' | ' + UserData.yourEd.location[i]);
     contentGen('education', 'p', UserData.yourEd.degree[i] + ' | ' + UserData.yourEd.gradDate[i]);
+    contentGen('education', 'p', UserData.yourEd.other[i]);
 
   }
 
@@ -93,7 +94,7 @@ function genAllContent() {
 
   for (var i = 0; i < UserData.yourExp.company.length; i++) {
 
-    contentGen('experience', 'h4', UserData.yourExp.company[i] + ' , ' + UserData.yourExp.position[i] + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate[i]);
+    contentGen('experience', 'h4', UserData.yourExp.company[i] + ' | ' + UserData.yourExp.companyLocation[i] + ' | ' + UserData.yourExp.position[i] + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate[i]);
     contentGen('experience', 'li', UserData.yourExp.action[i]);
 
   }

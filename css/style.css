@@ -118,7 +118,6 @@ main {
 }
 
 
-
 #personalInfo {
   text-align: center;
 }
@@ -145,8 +144,14 @@ h4 {
   font-size: 1.10em;
   font-weight: bold;
   line-height: 1.15em;
-  padding: .10em;
-  text-indent: 3.5em;
+  padding: .25em;
+  text-indent: 2.75em;
+}
+
+h5 {
+    font-size: .9em;
+    font-weight: normal;
+    padding: .25em;
 }
 
 p {
@@ -156,7 +161,9 @@ p {
 
 li {
   font-size: .9em;
+  list-style-position: inside;
   text-indent: 3.5em;
+  width: 50em;
 }
 
 label.info {

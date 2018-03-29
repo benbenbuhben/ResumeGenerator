@@ -30,6 +30,7 @@ var UserData = {
     location: [],
     degree: [],
     gradDate: [],
+    other: [],
   },
   yourExp: {
     company: [],
@@ -253,12 +254,14 @@ function handleSubmit5(event) {
   var locationInput = event.target.locationText.value;
   var degreeInput = event.target.degreeText.value;
   var gradDateInput = event.target.gradDateText.value;
+  var otherInput = event.target.otherText.value;
 
 
   UserData.yourEd.school.push(schoolInput);
   UserData.yourEd.location.push(locationInput);
   UserData.yourEd.degree.push(degreeInput);
   UserData.yourEd.gradDate.push(gradDateInput);
+  UserData.yourEd.other.push(otherInput);
 
   // if (UserData.edit2hover.includes(4) === false) {
   //   UserData.edit2hover.push(4);
