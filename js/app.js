@@ -24,7 +24,7 @@ var UserData = {
     languages: [],
     persContributions: []
   },
-  yourEd: {
+  yourEd: { //might need an object constructor fcn here
     school: [],
     location: [],
     degree: [],
@@ -93,6 +93,7 @@ saveToLS();
 
 //////////////////////////////////////////////////////////////////////
 
+
 var tabs = document.getElementsByClassName('tab');
 
 var allFieldsets = [];
@@ -142,6 +143,7 @@ function handleSubmit(event) {
   //   }
   // }
 
+
   //currentName.value = UserData.persInfo.userName;
 
   var nameInput = event.target.nameText.value;
@@ -172,6 +174,7 @@ function handleSubmit(event) {
   //genAllContent(); //replace with savetols & trigger refresh (update source of iframe)
   reload();
   document.getElementById('persInfoForm').reset();
+
 
 }
 
@@ -210,6 +213,7 @@ function handleSubmit3(event) {
   //genAllContent();
   reload();
   document.getElementById('techSkillsForm').reset();
+
 }
 
 function handleSubmit4(event) {
@@ -250,10 +254,13 @@ function handleSubmit4(event) {
   //genAllContent();
   reload();
   document.getElementById('projectForm').reset();
+
 }
 
 function handleSubmit5(event) {
   event.preventDefault();
+
+
 
   var schoolInput = event.target.schoolText.value;
   var locationInput = event.target.locationText.value;
@@ -274,10 +281,13 @@ function handleSubmit5(event) {
   //genAllContent(); //need to comment this out
   reload();
   document.getElementById('edForm').reset();
+
 }
 
 function handleSubmit6(event) {
   event.preventDefault();
+
+
 
   var companyInput = event.target.companyText.value;
   var positionInput = event.target.positionText.value;
@@ -300,6 +310,7 @@ function handleSubmit6(event) {
   //genAllContent();
   reload();
   document.getElementById('expForm').reset();
+
 }
 
 /////////////////////////
