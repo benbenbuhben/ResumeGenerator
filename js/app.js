@@ -14,29 +14,31 @@ var UserData = {
   techSkills: {
     languages: '',
     tools: [],
-    opSys: [],
+    opSys: []
   },
-  yourProjects: [{ //might need an object constructor fcn here
-    projTitle: '',
-    date: '',
-    url: '',
-    description: '',
-    languages: '',
-    persContributions: ''
-  }],
-  yourEd: [{ //might need an object constructor fcn here
+  yourProjects: { //might need an object constructor fcn here
+    projTitle: [],
+    date: [],
+    url: [],
+    description: [],
+    languages: [],
+    persContributions: []
+  },
+  yourEd: { //might need an object constructor fcn here
     school: '',
     location: '',
     degree: '',
-    gradDate: '',
-  }],
-  yourExp: [{
+    gradDate: ''
+  },
+  yourExp: {
     company: '',
+//**********JEN CHANGE, added location**********
+    companyLocation: '',
     position: '',
     startDate: '',
     endDate: '',
     action: []
-  }]
+  },
 };
 
 
@@ -71,20 +73,22 @@ function tabHandler(event) {
 
   if (event.target.id === 'infoTab') {
     allFieldsets[0].style.display = 'block';
-  } else if (event.target.id === 'techTab') {
+  } else if (event.target.id === 'statementTab') {
     allFieldsets[1].style.display = 'block';
-  } else if (event.target.id === 'projTab') {
+  } else if (event.target.id === 'techTab') {
     allFieldsets[2].style.display = 'block';
-  } else if (event.target.id === 'edTab') {
+  } else if (event.target.id === 'projTab') {
     allFieldsets[3].style.display = 'block';
-  } else if (event.target.id === 'expTab') {
+  } else if (event.target.id === 'edTab') {
     allFieldsets[4].style.display = 'block';
+  } else if (event.target.id === 'expTab') {
+    allFieldsets[5].style.display = 'block';
   }
+
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-
 
   var nameInput = event.target.nameText.value;
   var careerInput = event.target.careerText.value; //careerText is id for <input>
@@ -102,12 +106,24 @@ function handleSubmit(event) {
   UserData.persInfo.linkedin = linkedInInput;
   UserData.persInfo.github = gitHubInput;
 
-
+  
   genAllContent();
+
+  
 
 }
 
 function handleSubmit2(event) {
+  event.preventDefault();
+  var statementInput = event.target.statementText.value;
+  UserData.persStatement = statementInput;
+
+  
+  genAllContent();
+}
+
+function handleSubmit3(event) {
+
   event.preventDefault();
 
   var languagesInput = event.target.languagesText.value;
@@ -118,27 +134,16 @@ function handleSubmit2(event) {
   UserData.techSkills.tools = toolsInput;
   UserData.techSkills.opSys = opSysInput;
 
+
   genAllContent();
 
+ 
+
 }
-/*
-function handleSubmit3(event) {
+
+function handleSubmit4(event) {
   event.preventDefault();
 
-  var projectNameInput = event.target.projectNameText.value;
-  var projectDateInput = event.target.projectDateText.value;
-  var projectLinkInput = event.target.projectLinkText.value;
-
-  UserData.projectInfo.projectName = projectNameInput;
-  UserData.projectInfo.projectDate = projectDateInput;
-  UserData.projectInfo.projectLink = projectLinkInput;
-*/
-
-function handleSubmit3(event) {
-  event.preventDefault();
-
-  //var targetedInput = event.target;
-  //var projectNameInput = event.target.projectNameText[targetedInput].value;
   var projectNameInput = event.target.projectNameText.value;
   var projectDateInput = event.target.projectDateText.value;
   var projectLinkInput = event.target.projectLinkText.value;
@@ -146,24 +151,29 @@ function handleSubmit3(event) {
   var languagesUsedInput = event.target.languagesUsedText.value;
   var persContributionsInput = event.target.PersContributionsText.value;
 
-  UserData.yourProjects.projTitle = projectNameInput;
-  UserData.yourProjects.date = projectDateInput;
-  UserData.yourProjects.url = projectLinkInput;
-  UserData.yourProjects.description = projectDescriptionInput;
-  UserData.yourProjects.languages = languagesUsedInput;
-  UserData.yourProjects.persContributions = persContributionsInput;
 
-  // var class = document.getElementsByClassName('projectSTuff')
-  // for (var i = 0; index < array.length; i++) {
-  //   var targeteddeal = event.target.class[i].value
-  //   targeteddeal = '';
+  UserData.yourProjects.projTitle.push(projectNameInput);
+  UserData.yourProjects.date.push(projectDateInput);
+  UserData.yourProjects.url.push(projectLinkInput);
+  UserData.yourProjects.description.push(projectDescriptionInput);
+  UserData.yourProjects.languages.push(languagesUsedInput);
+  UserData.yourProjects.persContributions.push(persContributionsInput);
+
+  var projectSelect = document.getElementsByClassName('projectClass');
+
+ // for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
+    
+ //   projectSelect[i].value = '';
+ // }
 
   genAllContent();
 
 }
 
-function handleSubmit4(event) {
+function handleSubmit5(event) {
   event.preventDefault();
+
+
 
   var schoolInput = event.target.schoolText.value;
   var locationInput = event.target.locationText.value;
@@ -176,14 +186,20 @@ function handleSubmit4(event) {
   UserData.yourEd.degree = degreeInput;
   UserData.yourEd.gradDate = gradDateInput;
 
+ // addClickToEdit(3);
+  
+
   genAllContent();
 
 }
 
-function handleSubmit5(event) {
+function handleSubmit6(event) {
   event.preventDefault();
 
+
+//***************JEN CHANGE, added company location **********
   var companyInput = event.target.companyText.value;
+  var companyLocationInput = event.target.companyLocationText.value;
   var positionInput = event.target.positionText.value;
   var startInput = event.target.startText.value;
   var endInput = event.target.endText.value;
@@ -191,11 +207,11 @@ function handleSubmit5(event) {
 
 
   UserData.yourExp.company = companyInput;
+  UserData.yourExp.companyLocation = companyLocationInput;
   UserData.yourExp.position = positionInput;
   UserData.yourExp.startDate = startInput;
   UserData.yourExp.endDate = endInput;
   UserData.yourExp.action = actionInput;
-
 
   genAllContent();
 
@@ -218,60 +234,128 @@ function removeAllText(element) {
 
 function genAllContent() {
   var resume = document.getElementById('resume');
-  console.log(resume);
   removeAllText(resume);
 
   var formEl = document.getElementById('persInfoForm');
   formEl.addEventListener('submit', handleSubmit);
 
-  var formEl2 = document.getElementById('techSkillsForm');
+  var formEl2 = document.getElementById('statementForm');
   formEl2.addEventListener('submit', handleSubmit2);
 
-  var formEl3 = document.getElementById('projectForm');
+  var formEl3 = document.getElementById('techSkillsForm');
   formEl3.addEventListener('submit', handleSubmit3);
 
-  var formEl4 = document.getElementById('edForm');
+  var formEl4 = document.getElementById('projectForm');
   formEl4.addEventListener('submit', handleSubmit4);
 
-  var formEl5 = document.getElementById('expForm');
+  var formEl5 = document.getElementById('edForm');
   formEl5.addEventListener('submit', handleSubmit5);
+
+  var formEl6 = document.getElementById('expForm');
+  formEl6.addEventListener('submit', handleSubmit6);
 
 
 
   contentGen('personalInfo', 'h1', UserData.persInfo.userName);
   contentGen('personalInfo', 'h2', UserData.persInfo.careerTitle);
-
-  //Eventually User Input, but for now hard-coded with placeholders
-  //var infoArray = ['city', 'email', 'phone'];
   contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
-
-  var infoLinks = ['linkedIn', 'gitHub', ];
+  //******JEN CHANGE, changed from H3 to P to match mockup **********/
   contentGen('personalInfo', 'p', UserData.persInfo.linkedin + ' | ' + UserData.persInfo.github);
 
-  contentGen('statement', 'p', 'Lorem Ipsum a bunch of stuff');
+
+  contentGen('statement', 'p', UserData.persStatement);
+
 
   contentGen('technicalSkills', 'h3', 'TECHNICAL SKILLS');
   contentGen('technicalSkills', 'p', 'Languages: ' + UserData.techSkills.languages);
   contentGen('technicalSkills', 'p', 'Tools: ' + UserData.techSkills.tools);
   contentGen('technicalSkills', 'p', 'Operating Systems: ' + UserData.techSkills.opSys);
 
-
+//********JEN CHANGE, project to PROJECTS********** *//
   contentGen('projects', 'h3', 'PROJECTS');
-  contentGen('projects', 'h4', UserData.yourProjects.projTitle + ' | ' + UserData.yourProjects.date + ' | ' + UserData.yourProjects.url);
-  contentGen('projects', 'p', UserData.yourProjects.description);
-  contentGen('projects', 'p', 'Languages Used: ' + UserData.yourProjects.languages);
-  contentGen('projects', 'p', UserData.yourProjects.persContributions);
+
+  for (var i = 0; i < UserData.yourProjects.projTitle.length; i++) {
+
+    contentGen('projects', 'h4', UserData.yourProjects.projTitle[i] + ' | ' + UserData.yourProjects.date[i] + ' | ' + UserData.yourProjects.url[i]);
+    contentGen('projects', 'p', UserData.yourProjects.description[i]);
+    contentGen('projects', 'p', 'Languages Used: ' + UserData.yourProjects.languages[i]);
+    contentGen('projects', 'p', UserData.yourProjects.persContributions[i]);
+  
+
+  }
+
 
   contentGen('education', 'h3', 'EDUCATION');
   contentGen('education', 'h4', UserData.yourEd.school + ' | ' + UserData.yourEd.location);
   contentGen('education', 'p', UserData.yourEd.degree + ' | ' + UserData.yourEd.gradDate);
-  
 
+
+//********JEN CHANGE, Experience to caps added company local add loc********
   contentGen('experience', 'h3', 'EXPERIENCE');
-  contentGen('experience', 'h4', UserData.yourExp.company + ' - ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
+  contentGen('experience', 'h4', UserData.yourExp.company + ' | ' + UserData.yourExp.companyLocation + ' | ' + UserData.yourExp.position + ' | ' + UserData.yourExp.startDate + ' - ' + UserData.yourExp.endDate);
   contentGen('experience', 'p', UserData.yourExp.action);
 
 }
+
+function addClickToEdit(index) { //Will get added at the end of submit handlers (maybe as onhover callback)
+
+
+  var wrappers = document.getElementsByClassName('wrapper');
+  var bigwrappers = document.getElementsByClassName('bigwrapper');
+  var resume = document.getElementById('resume');
+  var fieldsets = document.getElementsByClassName('fieldSet');
+  console.log(fieldsets);
+  
+
+
+  var deleteImg = document.createElement('img');
+  deleteImg.setAttribute('src', 'img/xIcon.svg');
+  //deleteImg.addEventListener('click', deleteFieldset);
+  deleteImg.setAttribute('class', 'delete');
+  deleteImg.setAttribute('height', '24px');
+  deleteImg.setAttribute('width', '24px');
+  deleteImg.style.visibility = 'hidden';
+  deleteImg.style.zIndex = '2';
+  wrappers[index].appendChild(deleteImg);
+ 
+
+  var editImg = document.createElement('img');
+  editImg.setAttribute('src', 'img/editPencil.svg');
+  //editImg.addEventListener('click', editFieldset);
+  editImg.setAttribute('class', 'editPencil');
+  editImg.setAttribute('height', '24px');
+  editImg.setAttribute('width', '24px');
+  editImg.style.visibility = 'hidden';
+  editImg.style.zIndex = '2';
+  wrappers[index].appendChild(editImg);
+
+  bigwrappers[index].addEventListener('mouseover', function(){
+    deleteImg.style.visibility = 'visible';
+    editImg.style.visibility = 'visible';
+    resume.style.opacity = '0.3';
+    fieldsets[index].style.zIndex = '3';
+    fieldsets[index].style.opacity = '1';
+    console.log(fieldsets[index].style.opacity);
+  });
+  bigwrappers[index].addEventListener('mouseout', function(){
+    deleteImg.style.visibility = 'hidden';
+    editImg.style.visibility = 'hidden';
+    resume.style.opacity = '1';
+  });
+  wrappers[index].addEventListener('mouseover', function(){
+    deleteImg.style.visibility = 'visible';
+    editImg.style.visibility = 'visible';
+  });
+  wrappers[index].addEventListener('mouseout', function(){
+    deleteImg.style.visibility = 'hidden';
+    editImg.style.visibility = 'hidden';
+  });
+  
+}
+
+
+
+
 
 genAllContent();
 
