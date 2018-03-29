@@ -1,5 +1,6 @@
 header {
   margin-bottom: -200px;
+  opacity: 0.6;
 }
 
 body {
@@ -7,7 +8,7 @@ body {
 }
 
 iframe {
-  margin-left: 200px;
+  margin-left: 210px;
   border: 1px solid;
     padding: 10px;
     box-shadow: 5px 10px #888888;
@@ -233,13 +234,14 @@ label.info:hover span {
 
 fieldset {
   display: block;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 125px;
+  margin-right: 125px;
   padding-top: 1em;
   padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 60px;
+  padding-right: 60px;
   border: 2px groove black;
+  text-align: center;
 }
 
 input {
@@ -270,6 +272,7 @@ hr {
 
 .bigwrapper {
   position: relative;
+  margin-top:0;
 }
 
 .wrapper {

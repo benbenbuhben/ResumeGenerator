@@ -1,0 +1,147 @@
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+header {
+  height: 0;
+  font-family: 'Playfair Display', serif;
+  width: 100%;
+  opacity:0.6;
+}
+
+#header-nav {
+  background-color: rgb(24, 23, 23);
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+
+#logo {
+  height: auto;
+  left: 100px;
+  position: absolute;
+  top: 10px;
+  width: 200px;
+}
+
+#header-nav ul {
+  position: relative;
+  text-align: center;
+  right: 150px;
+  top: 40px;
+}
+
+#header-nav ul li {
+  display: inline-block;
+  margin-left: 75px;
+}
+
+#header-nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+#sectionOne {
+  background-image: 
+  linear-gradient(
+    rgba(79, 103, 116, 0.7),
+    rgba(89, 110, 128, 0.7)
+  ),
+  url("../img/tech interview.jpg");
+  height: 100vh;
+  margin: 0 auto;
+}
+
+button {
+  background: linear-gradient(to left,#00d9f1, #4eddd6);
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+#textContainer {
+  text-align: center;
+  color: white;
+  margin-top: 60px;
+}
+
+p {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin: 30px;
+  line-height: 1.4em;
+  font-weight: lighter;
+
+}
+
+#welcome a {
+  margin-top: 280px;
+}
+
+button:hover{
+  background: linear-gradient(to right,#00d9f1, #4eddd6);
+  
+  }
+
+#create-resume {
+  height: 75px;
+  position: relative;
+  top: 200px;
+  width: 200px;
+}
+
+#welcome{
+  background: rgb(141, 153, 158);
+  opacity: 0.6;
+  height: 60%;
+  width: 70%;
+
+  position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+#scrolling{
+  background: rgb(141, 153, 158);
+  opacity: 0.6;
+  height: 100px;
+  width: 100%;
+
+  position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 47%;
+}
+
+.example {
+  text-align: center;
+  color: white;
+  margin: 0px;
+
+}
+marquee {
+font-family: cursive;
+  font-size: 50px;
+  margin: 15px;
+  line-height: 1.4em;
+  margin-bottom:80px;
+}

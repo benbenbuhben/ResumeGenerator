@@ -102,6 +102,7 @@ function genAllContent() {
 }
 
 //function addClickToEdit() { //Will get added at the end of submit handlers (maybe as onhover callback)
+var panel = document.getElementById('panel');
 
 if (UserData.edit2hover.length > 0) {
 
@@ -156,17 +157,30 @@ if (UserData.edit2hover.length > 0) {
     wrappers[index].appendChild(editImg);
 
     bigwrappers[index].addEventListener('mouseover', function () {
+      deleteImg.style.position = 'relative';
+      editImg.style.position = 'relative';
+      deleteImg.style.zIndex = '3';
+      editImg.style.zIndex = '3';
       deleteImg.style.visibility = 'visible';
       editImg.style.visibility = 'visible';
-      resume.style.opacity = '0.3';
-      fieldsets[index].style.zIndex = '3';
-      fieldsets[index].style.opacity = '1';
-      console.log(fieldsets[index].style.opacity);
+      deleteImg.style.backgroundColor= 'white';
+      editImg.style.backgroundColor= 'white';
+      bigwrappers[index].style.position = 'relative';
+      bigwrappers[index].style.zIndex = '3';
+      bigwrappers[index].style.backgroundColor= 'white';
+      bigwrappers[index].style.paddingTop = '3px';
+      bigwrappers[index].style.marginTop = '3px';
+      panel.style.display = 'initial';
+      panel.style.zIndex = '1';
+      
     });
     bigwrappers[index].addEventListener('mouseout', function () {
       deleteImg.style.visibility = 'hidden';
       editImg.style.visibility = 'hidden';
-      resume.style.opacity = '1';
+      fieldsets[index].style.zIndex = 'initial';
+      panel.style.display = 'none';
+      
+
     });
     wrappers[index].addEventListener('mouseover', function () {
       deleteImg.style.visibility = 'visible';
