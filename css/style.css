@@ -2,9 +2,6 @@ header {
   margin-bottom: -200px;
 }
 
-iframe {
-  margin-left: 200px;
-}
 
 main {
   font-family: Helvetica;
@@ -17,9 +14,11 @@ main {
   width: 100%;
 }
 
+
 /* #persInfoForm{
   margin-bottom:20px;
 } */
+
 
 #logo {
   left: 100px;

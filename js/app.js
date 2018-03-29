@@ -123,17 +123,6 @@ function tabHandler(event) {
 function handleSubmit(event) {
   event.preventDefault();
 
-  // var persInfoEls = document.getElementsById('persInfoClass');
-
-  // for (var i = 0; i < Object.keys(UserData.persInfo); i++) {
-  //   if (Object.keys(UserData.persInfo[i]) > 1) {
-  //     //reassign
-  //   }
-  // }
-
-
-  //currentName.value = UserData.persInfo.userName;
-
   var nameInput = event.target.nameText.value;
   var careerInput = event.target.careerText.value; //careerText is id for <input>
   var residenceInput = event.target.residenceText.value;
@@ -159,6 +148,7 @@ function handleSubmit(event) {
   //genAllContent(); //replace with savetols & trigger refresh (update source of iframe)
   window.location.reload();
 
+  
 
 }
 
@@ -166,6 +156,7 @@ function handleSubmit2(event) {
   event.preventDefault();
   var statementInput = event.target.statementText.value;
   UserData.persStatement = statementInput;
+
 
   // if (UserData.edit2hover.includes(1) === false) {
   //   UserData.edit2hover.push(1);
@@ -196,16 +187,20 @@ function handleSubmit3(event) {
   //genAllContent();
   window.location.reload();
 
+ 
+
 }
 
 function handleSubmit4(event) {
   event.preventDefault();
+
 
   // var resume = document.getElementById('resume');
   // removeAllText(resume);
 
   //var targetedInput = event.target;
   //var projectNameInput = event.target.projectNameText[targetedInput].value;
+
   var projectNameInput = event.target.projectNameText.value;
   var projectDateInput = event.target.projectDateText.value;
   var projectLinkInput = event.target.projectLinkText.value;
@@ -219,9 +214,10 @@ function handleSubmit4(event) {
   UserData.yourProjects.url.push(projectLinkInput);
   UserData.yourProjects.description.push(projectDescriptionInput);
   UserData.yourProjects.languages.push(languagesUsedInput);
-  UserData.yourProjects.persContributions.push(persContributionsInput);
+
 
   // var projectSelect = document.getElementsByClassName('projectClass');
+
 
   // for (var i = 0; i < Object.keys(UserData.yourProjects).length; i++) {
 
@@ -258,6 +254,7 @@ function handleSubmit5(event) {
   //   UserData.edit2hover.push(4);
   // }
 
+
   saveToLS();
   //genAllContent(); //need to comment this out
   window.location.reload();
@@ -270,10 +267,12 @@ function handleSubmit6(event) {
 
 
   var companyInput = event.target.companyText.value;
+  var companyLocationInput = event.target.companyLocationText.value;
   var positionInput = event.target.positionText.value;
   var startInput = event.target.startText.value;
   var endInput = event.target.endText.value;
   var actionInput = event.target.actionText.value;
+
 
 
   UserData.yourExp.company.push(companyInput);
@@ -303,6 +302,7 @@ function handleSubmit6(event) {
 
 
 //genAllContent();
+
 
 
 
