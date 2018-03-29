@@ -32,7 +32,7 @@ function contentGen(parentElID, childEl, userText) {
   var parentVar = document.getElementById(parentElID);
   var childVar = document.createElement(childEl);
   //childVar.addEventListener('submit', handleSubmit);
-  childVar.textContent = userText;
+  childVar.innerHTML = userText;
   parentVar.appendChild(childVar);
 }
 
