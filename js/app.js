@@ -37,9 +37,21 @@ var UserData = {
     endDate: [],
     action: []
   },
- // edit2hover: [],
-
+  edit2hover: []
 };
+
+var cloneBlank = JSON.parse(JSON.stringify(UserData));
+console.log(cloneBlank);
+UserData.defaults = cloneBlank;
+console.log(UserData.defaults);
+
+function reload() {
+  var url = "resume.html?" + Math.random();
+  document.getElementById('preview').src = url;
+}
+
+
+
 
 var formEl = document.getElementById('persInfoForm');
 formEl.addEventListener('submit', handleSubmit);
@@ -151,13 +163,17 @@ function handleSubmit(event) {
   UserData.persInfo.github = gitHubInput;
 
 
-  // if (UserData.edit2hover.includes(0) === false) {
-  //   UserData.edit2hover.push(0);
-  // }
+  if (UserData.edit2hover.includes(0) === false) {
+    UserData.edit2hover.push(0);
+
+    reload();
+    document.getElementById('persInfoForm').reset();
+  }
 
   saveToLS();
   //genAllContent(); //replace with savetols & trigger refresh (update source of iframe)
-  window.location.reload();
+  reload();
+  document.getElementById('persInfoForm').reset();
 
 
 }
@@ -167,13 +183,14 @@ function handleSubmit2(event) {
   var statementInput = event.target.statementText.value;
   UserData.persStatement = statementInput;
 
-  // if (UserData.edit2hover.includes(1) === false) {
-  //   UserData.edit2hover.push(1);
-  // }
+  if (UserData.edit2hover.includes(1) === false) {
+    UserData.edit2hover.push(1);
+  }
 
   saveToLS();
   //genAllContent();
-  window.location.reload();
+  reload();
+  document.getElementById('statementForm').reset();
 }
 
 function handleSubmit3(event) {
@@ -188,13 +205,14 @@ function handleSubmit3(event) {
   UserData.techSkills.tools = toolsInput;
   UserData.techSkills.opSys = opSysInput;
 
-  // if (UserData.edit2hover.includes(2) === false) {
-  //   UserData.edit2hover.push(2);
-  // }
+  if (UserData.edit2hover.includes(2) === false) {
+    UserData.edit2hover.push(2);
+  }
 
   saveToLS();
   //genAllContent();
-  window.location.reload();
+  reload();
+  document.getElementById('techSkillsForm').reset();
 
 }
 
@@ -228,13 +246,14 @@ function handleSubmit4(event) {
   //   projectSelect[i].value = '';
   // }
 
-  // if (UserData.edit2hover.includes(3) === false) {
-  //   UserData.edit2hover.push(3);
-  // }
+  if (UserData.edit2hover.includes(3) === false) {
+    UserData.edit2hover.push(3);
+  }
 
   saveToLS();
   //genAllContent();
-  window.location.reload();
+  reload();
+  document.getElementById('projectForm').reset();
 
 }
 
@@ -254,13 +273,14 @@ function handleSubmit5(event) {
   UserData.yourEd.degree.push(degreeInput);
   UserData.yourEd.gradDate.push(gradDateInput);
 
-  // if (UserData.edit2hover.includes(4) === false) {
-  //   UserData.edit2hover.push(4);
-  // }
+  if (UserData.edit2hover.includes(4) === false) {
+    UserData.edit2hover.push(4);
+  }
 
   saveToLS();
   //genAllContent(); //need to comment this out
-  window.location.reload();
+  reload();
+  document.getElementById('edForm').reset();
 
 }
 
@@ -282,13 +302,14 @@ function handleSubmit6(event) {
   UserData.yourExp.endDate.push(endInput);
   UserData.yourExp.action.push(actionInput);
 
-  // if (UserData.edit2hover.includes(5) === false) {
-  //   UserData.edit2hover.push(5);
-  // }
+  if (UserData.edit2hover.includes(5) === false) {
+    UserData.edit2hover.push(5);
+  }
 
   saveToLS();
   //genAllContent();
-  window.location.reload();
+  reload();
+  document.getElementById('expForm').reset();
 
 }
 
