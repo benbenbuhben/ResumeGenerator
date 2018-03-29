@@ -1,0 +1,57 @@
+header {
+  margin-bottom: -200px;
+  font-family: Helvetica;
+}
+
+main {
+  font-family: Helvetica;
+}
+
+#header-nav {
+  background-color: rgb(24, 23, 23);
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+
+/* #persInfoForm{
+  margin-bottom:20px;
+} */
+
+#logo {
+  height: auto;
+  left: 100px;
+  position: absolute;
+  top: 10px;
+  width: 200px;
+}
+
+#header-nav ul {
+  position: relative;
+  text-align: center;
+  right: 200px;
+  top: 40px;
+}
+
+#header-nav ul li {
+  display: inline-block;
+  margin-left: 75px;
+}
+
+#header-nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+#sectionOne {
+  background-color: red;
+  height: 500px;
+  width: 100%;
+}
+
+#create-resume {
+  height: 75px;
+  position: relative;
+  top: 200px;
+  width: 200px;
+}
