@@ -3,10 +3,6 @@ header {
   font-family: Helvetica;
 }
 
-iframe {
-  margin-left: 200px;
-}
-
 main {
   font-family: Helvetica;
 }
@@ -48,7 +44,8 @@ main {
 }
 
 #sectionOne {
-  height: 100vh;
+  background-color: red;
+  height: 500px;
   width: 100%;
 }
 
