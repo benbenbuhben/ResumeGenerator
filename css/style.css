@@ -2,6 +2,10 @@ header {
   margin-bottom: -200px;
 }
 
+body {
+  background-color: rgba(233, 241, 247, 0.466);
+}
+
 iframe {
   margin-left: 200px;
   border: 1px solid;
@@ -63,9 +67,11 @@ main {
 } */
 
 #logo {
+  height: auto;
   left: 100px;
   position: absolute;
   top: 10px;
+  width: 200px;
 }
 
 #header-nav ul {
@@ -87,6 +93,7 @@ main {
 
 #resume {
   font-family: Arial, sans-serif;
+  background-color: white;
   margin: 0 auto;
   width: 850px;
   height: 1100px;
