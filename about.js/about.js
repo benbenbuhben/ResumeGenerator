@@ -1,6 +1,6 @@
 'use strict';
 
-var portraits = ['http://via.placeholder.com/250x200', 'http://via.placeholder.com/250x200', 'http://via.placeholder.com/250x200', 'http://via.placeholder.com/250x200'];
+var portraits = ['http://via.placeholder.com/250x200', 'http://via.placeholder.com/250x200', 'assets/khalilbit.png', 'http://via.placeholder.com/250x200'];
 
 var bioH = document.getElementById('teamN');
 var bioP = document.getElementById('about-me');
@@ -10,10 +10,10 @@ var imgPortraits = [];
 
 var canvasWidth = 960;
 var canvasHeight = 500;
-var imgSize0 = 200;
-var imgSize1 = 200;
-var imgSize2 = 200;
-var imgSize3 = 200;
+var imgSize0 = 500;
+var imgSize1 = 500;
+var imgSize2 = 500;
+var imgSize3 = 500;
 
 var mouseX;
 var mouseY;

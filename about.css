@@ -14,41 +14,59 @@ header {
   display: inline-block;
   height: 100px;
   width: 100%;
+  font-family: 'Roboto Slab', serif;
 }
-li a {
-  color: white;
-  text-decoration: none;
-}
-ul li {
-  display: inline-block;
-  margin-left: 75px;
-}
-ul {
-  position: relative;
-  text-align: center;
-  right: 200px;
-  top: 40px;
-}
- header img {
+header img {
   height: auto;
   left: 100px;
   position: absolute;
   top: 10px;
   width: 200px;
+  opacity: 0.8;
 }
-
-section {
+li a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 3px 3px 3px rgba(64, 65, 66, 0.5);
+}
+ul li {
+  display: inline-block;
+  margin-left: 75px;
   font-size: 20px;
-  background-color: rgb(24, 23, 23);
-  display: inline-block;
-  height: 70px;
-  width: 100%;
-  text-align: center
 }
-section p {
-  background-color: rgb(24, 23, 23);
-  display: inline-block;
-  height: 70px;
+ul li:hover {
+  opacity: 0.5;
+}
+ul {
+  position: relative;
+  text-align: center;
+  right: 150px;
+  top: 40px;
+}
+ 
+
+
+main img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 5px solid black;
+  
+  
+ 
+}
+main h1 {
+  font-family: 'Roboto Slab', serif; 
+  text-align: center;
+  color: rgb(24, 23, 23);
+}
+p {
+
+  font-family: 'Roboto Slab', serif;
+  color: rgb(24, 23, 23);
+  font-size: 20px;
+  height: 85px;
   width: 100%;
 }
 
