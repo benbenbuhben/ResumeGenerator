@@ -10,7 +10,6 @@
   padding-bottom: 50px;
   /* border: 2px solid black; */
   line-height: 1.4em;
-
 }
 
 #personalInfo {
@@ -80,17 +79,4 @@ h1 {
   height: 50px;
   padding: 0;
   margin: 0;
-}
-
-#panel {
-  /* Should take whole screen */
-  position: fixed;
-  top: 0; bottom: 0; left: 0; right: 0;
-  
-  /* Semi-transparent black */
-  background: black;
-  opacity: 0.7;
- 
-  z-index: 1;
-  display: none;
 }
