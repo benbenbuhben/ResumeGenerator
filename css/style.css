@@ -71,9 +71,11 @@ iframe {
 }
 
 #clear-save-buttons {
-  position:relative;
-  margin-bottom:20px;
-  left: 85%;
+  position: absolute;
+  left: 87%;
+  margin-bottom: 10px;
+  margin-top: -40px;
+  top: 300px;
 }
 
 #clear-save-buttons button {
@@ -81,9 +83,11 @@ iframe {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
+  border: 1px solid #bec5c7;
+  box-shadow: 0px 0px 15px rgb(230, 242, 242);
   font-family: Arial;
   color: #ffffff;
-  font-s
+  cursor: pointer;
   font-size: 14px;
   text-align: center;
   text-decoration: none;
@@ -95,7 +99,7 @@ iframe {
   height: 250px;
   right: 10;
   position: relative;
-  top: 500px;
+  top: 400px;
   width: 175px;
 }
 

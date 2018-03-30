@@ -40,19 +40,95 @@ header {
   text-decoration: none;
 }
 
+#register {
+  background-color: #00d9f1;
+  border-radius: 40px;
+  color: white;
+  float: right;
+  font-size: 14px;
+  height: 35px;
+  position: relative;
+  right: 65px;
+  text-shadow: 1px 1px 3px rgb(106, 106, 106);
+  top: 15px;
+  width: 125px;
+}
+
+.registeredUser {
+  color: white;
+  float: right;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+#signIn {
+  float:right;
+}
+
+#registerForm {
+  background-color: #00d9f1;
+  border: 10px solid white;
+  color: white;
+  box-shadow: 0px 0px 5px rgb(193, 210, 242);
+  height: 430px;
+  left: 550px;
+  line-height: 1.6;
+  padding: 20px;
+  position: relative;
+  text-shadow: 0px 0px 6px #808080; 
+  top: 100px;
+  width: 265px;
+  z-index: 99;
+}
+
+#registerForm div {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.password {
+  margin-top: 15px;
+}
+
+#registerForm input {
+  border: 1px solid grey;
+  box-shadow: 0px 0px 5px #0099aa;
+  padding: 3px;
+  width: 80%;
+  height: 30px;
+}
+
+#registerForm button {
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0px 0px 3px rgb(237, 237, 237);
+  float: right;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 90px;
+}
+
+.hidden {
+  display: none;
+}
+
+.unhidden {
+  display: block;
+}
+
 #sectionOne {
-  background-image: 
-  linear-gradient(
-    rgba(79, 103, 116, 0.7),
-    rgba(89, 110, 128, 0.7)
-  ),
-  url("../assets/tech interview.jpg");
+  background-color: rgb(255, 255, 255);
   height: 100vh;
   width: 100%;
 }
 
 #sectionOne button {
   background: linear-gradient(to left,#00d9f1, #4eddd6);
+  border: 1px solid rgb(223, 150, 73);
+  box-shadow: 0px 0px 5px rgb(165, 132, 69);
   border-radius: 40px;
   color: white;
   cursor: pointer;
@@ -64,13 +140,14 @@ header {
   padding-right: 15px;
   position: relative;
   text-align: center;
+  text-shadow: 0px 0px 5px rgb(62, 165, 169);
   top: 300px;
   width: 220px;
 }
 
 #sectionOne button:hover{
   background: linear-gradient(to right,#00d9f1, #4eddd6);
-  
+  font-size: 130%;
   }
 
 #create-resume {
