@@ -32,7 +32,7 @@ function contentGen(parentElID, childEl, userText) {
   var parentVar = document.getElementById(parentElID);
   var childVar = document.createElement(childEl);
   //childVar.addEventListener('submit', handleSubmit);
-  childVar.textContent = userText;
+  childVar.innerHTML = userText;
   parentVar.appendChild(childVar);
 }
 
@@ -102,79 +102,96 @@ function genAllContent() {
 }
 
 //function addClickToEdit() { //Will get added at the end of submit handlers (maybe as onhover callback)
+var panel = document.getElementById('panel');
 
-for (var i = 0; i < UserData.edit2hover.length; i++) {
+if (UserData.edit2hover.length > 0) {
 
-  var index = UserData.edit2hover[i];
+  for (var i = 0; i < UserData.edit2hover.length; i++) {
 
-  var wrappers = document.getElementsByClassName('wrapper');
-  var bigwrappers = document.getElementsByClassName('bigwrapper');
-  var resume = document.getElementById('resume');
-  var fieldsets = document.getElementsByClassName('fieldSet');
-  console.log(fieldsets);
+    var index = UserData.edit2hover[i];
 
-
-
-  var deleteImg = document.createElement('img');
-  deleteImg.setAttribute('src', 'img/xIcon.svg');
-  deleteImg.addEventListener('click', function(){
-    console.log('The index to delete is ' + index);
-  
-    // //removeAllText(wrappers[index+1]);
-    
-    
-    //replace values in object with initial and repopulate
-
-    //This is going to be a for var in, hasownpropert, getownpropertynames loop maybe? Ask John first thing
-    //Goal: For delete, replace this fieldset with initials (userData.defaults). For edit: replace values with the ones they have stored locally... may be more complicated for projects since they are arrays... so how to target/index those elements? Maybe assign ID when they are generated?
-
-    //UserData.Object.keys(UserData)[index]
-
-    //trigger iframe refresh?
-
-  });
-  deleteImg.setAttribute('class', 'delete');
-  deleteImg.setAttribute('height', '24px');
-  deleteImg.setAttribute('width', '24px');
-  deleteImg.style.visibility = 'hidden';
-  deleteImg.style.zIndex = '2';
-  wrappers[index].appendChild(deleteImg);
+    var wrappers = document.getElementsByClassName('wrapper');
+    var bigwrappers = document.getElementsByClassName('bigwrapper');
+    var resume = document.getElementById('resume');
+    var fieldsets = document.getElementsByClassName('fieldSet');
+    console.log(fieldsets);
 
 
-  var editImg = document.createElement('img');
-  editImg.setAttribute('src', 'img/editPencil.svg');
-  editImg.addEventListener('click', function(){
-    console.log('The index to edit is' + index);
-  });
-  editImg.setAttribute('class', 'editPencil');
-  editImg.setAttribute('height', '24px');
-  editImg.setAttribute('width', '24px');
-  editImg.style.visibility = 'hidden';
-  editImg.style.zIndex = '2';
-  wrappers[index].appendChild(editImg);
 
-  bigwrappers[index].addEventListener('mouseover', function () {
-    deleteImg.style.visibility = 'visible';
-    editImg.style.visibility = 'visible';
-    resume.style.opacity = '0.3';
-    fieldsets[index].style.zIndex = '3';
-    fieldsets[index].style.opacity = '1';
-    console.log(fieldsets[index].style.opacity);
-  });
-  bigwrappers[index].addEventListener('mouseout', function () {
+    var deleteImg = document.createElement('img');
+    deleteImg.setAttribute('src', 'img/xIcon.svg');
+    deleteImg.addEventListener('click', function () {
+      console.log('The index to delete is ' + index);
+
+      // //removeAllText(wrappers[index+1]);
+
+
+      //replace values in object with initial and repopulate
+
+      //This is going to be a for var in, hasownpropert, getownpropertynames loop maybe? Ask John first thing
+      //Goal: For delete, replace this fieldset with initials (userData.defaults). For edit: replace values with the ones they have stored locally... may be more complicated for projects since they are arrays... so how to target/index those elements? Maybe assign ID when they are generated?
+
+      //UserData.Object.keys(UserData)[index]
+
+      //trigger iframe refresh?
+
+    });
+    deleteImg.setAttribute('class', 'delete');
+    deleteImg.setAttribute('height', '24px');
+    deleteImg.setAttribute('width', '24px');
     deleteImg.style.visibility = 'hidden';
-    editImg.style.visibility = 'hidden';
-    resume.style.opacity = '1';
-  });
-  wrappers[index].addEventListener('mouseover', function () {
-    deleteImg.style.visibility = 'visible';
-    editImg.style.visibility = 'visible';
-  });
-  wrappers[index].addEventListener('mouseout', function () {
-    deleteImg.style.visibility = 'hidden';
-    editImg.style.visibility = 'hidden';
-  });
+    deleteImg.style.zIndex = '2';
+    wrappers[index].appendChild(deleteImg);
 
+
+    var editImg = document.createElement('img');
+    editImg.setAttribute('src', 'img/editPencil.svg');
+    editImg.addEventListener('click', function () {
+      console.log('The index to edit is' + index);
+    });
+    editImg.setAttribute('class', 'editPencil');
+    editImg.setAttribute('height', '24px');
+    editImg.setAttribute('width', '24px');
+    editImg.style.visibility = 'hidden';
+    editImg.style.zIndex = '2';
+    wrappers[index].appendChild(editImg);
+
+    bigwrappers[index].addEventListener('mouseover', function () {
+      deleteImg.style.position = 'relative';
+      editImg.style.position = 'relative';
+      deleteImg.style.zIndex = '3';
+      editImg.style.zIndex = '3';
+      deleteImg.style.visibility = 'visible';
+      editImg.style.visibility = 'visible';
+      deleteImg.style.backgroundColor= 'white';
+      editImg.style.backgroundColor= 'white';
+      bigwrappers[index].style.position = 'relative';
+      bigwrappers[index].style.zIndex = '3';
+      bigwrappers[index].style.backgroundColor= 'white';
+      bigwrappers[index].style.paddingTop = '3px';
+      bigwrappers[index].style.marginTop = '3px';
+      panel.style.display = 'initial';
+      panel.style.zIndex = '1';
+      
+    });
+    bigwrappers[index].addEventListener('mouseout', function () {
+      deleteImg.style.visibility = 'hidden';
+      editImg.style.visibility = 'hidden';
+      fieldsets[index].style.zIndex = 'initial';
+      panel.style.display = 'none';
+      
+
+    });
+    wrappers[index].addEventListener('mouseover', function () {
+      deleteImg.style.visibility = 'visible';
+      editImg.style.visibility = 'visible';
+    });
+    wrappers[index].addEventListener('mouseout', function () {
+      deleteImg.style.visibility = 'hidden';
+      editImg.style.visibility = 'hidden';
+    });
+
+  }
 }
 
 //}
