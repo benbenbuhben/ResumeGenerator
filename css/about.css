@@ -1,0 +1,126 @@
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+header {
+  height: 0;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: 3px 3px 3px rgba(64, 65, 66, 0.5);
+  font-weight: 400;
+  width: 100%;
+  opacity:0.6;
+}
+
+body {
+  background-color: rgba(233, 241, 247, 0.466);
+  background-image:
+  linear-gradient(
+    rgba(79, 103, 116, 0.7),
+    rgba(89, 110, 128, 0.7)
+  ),
+  url("../img/tech interview.jpg");
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+main {
+  font-family: 'Roboto Slab', serif;
+}
+
+#header-nav {
+  background-color: rgb(24, 23, 23);
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+
+/* #persInfoForm{
+  margin-bottom:20px;
+} */
+
+#logo {
+  height: auto;
+  left: 100px;
+  position: absolute;
+  top: 10px;
+  width: 200px;
+  opacity: 0.8;
+}
+
+#header-nav ul {
+  position: relative;
+  text-align: center;
+  right: 150px;
+  top: 40px;
+}
+
+#header-nav ul li {
+  display: inline-block;
+  margin-left: 75px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+
+#header-nav li a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+#header-nav ul li:hover {
+  opacity: 0.5;
+}
+
+main img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 5px solid black;
+  margin-right: 20px;
+
+
+
+}
+main h1 {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  color:white;
+  font-size: 40px;
+}
+p {
+
+  font-family: 'Roboto Slab', serif;
+  color:white;
+  font-size: 20px;
+  height: 85px;
+  width: 94%;
+  font-weight: lighter;
+  margin-left: 30px;
+  padding-right: 30px;
+
+}
+
+#aboutContainer {
+  background: rgb(141, 153, 158);
+  margin-top:50px;
+  padding:30px;
+  margin-right: 50px;
+  opacity: 0.6;
+  box-shadow: 5px 5px rgba(79, 103, 116, 0.5);
+  border-radius: 20px;
+
+  position: absolute;
+  top:0;
+  bottom: 20px;
+  left: 40px;
+  right: 40px;
+  margin: 0 auto;
+  margin-top: 132px;
+  padding-right: 30px;
+}
