@@ -1,32 +1,15 @@
-// loadfromLS
-
-// genallcontent(
-
-//   dfsdsf
-//   sfbsfbsf
-//   sdfbfsg
-// )
-
-// genallcontent()
-
 'use strict';
 
-//var UserData = {};
-
-//function loadLS() {
 var yourData = localStorage.getItem('userData');
 console.log(yourData);
 var usableItems = JSON.parse(yourData);
 console.log('here is local storage');
 
-if (usableItems && Object.keys(usableItems).length) { //  
+if (usableItems && Object.keys(usableItems).length) { //
   var UserData = usableItems;
   console.log('Loaded from Local Storage');
-  //return;
 }
-//}
 
-//loadLS();
 
 function contentGen(parentElID, childEl, userText) {
   var parentVar = document.getElementById(parentElID);
@@ -55,7 +38,7 @@ function genAllContent() {
   var resume = document.getElementById('resume');
   removeAllText(resume);
 
- 
+
   contentGen('personalInfo', 'h1', UserData.persInfo.userName);
   contentGen('personalInfo', 'h2', UserData.persInfo.careerTitle);
   contentGen('personalInfo', 'p', UserData.persInfo.city + ' | ' + UserData.persInfo.email + ' | ' + UserData.persInfo.phone);
