@@ -1,10 +1,12 @@
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 header {
   height: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: 3px 3px 3px rgba(64, 65, 66, 0.5);
+  font-weight: 400;
   width: 100%;
   opacity:0.6;
 }
@@ -22,6 +24,7 @@ header {
   position: absolute;
   top: 10px;
   width: 200px;
+  opacity: 0.8;
 }
 
 #header-nav ul {
@@ -34,6 +37,11 @@ header {
 #header-nav ul li {
   display: inline-block;
   margin-left: 75px;
+  font-size: 20px;
+}
+
+#header-nav ul li:hover {
+  opacity: 0.5;
 }
 
 #header-nav li a {
@@ -41,8 +49,87 @@ header {
   text-decoration: none;
 }
 
+#register {
+  background-color: #00d9f1;
+  border-radius: 40px;
+  color: white;
+  float: right;
+  font-size: 14px;
+  height: 35px;
+  position: relative;
+  right: 65px;
+  text-shadow: 1px 1px 3px rgb(106, 106, 106);
+  top: 15px;
+  width: 125px;
+}
+
+.registeredUser {
+  color: white;
+  float: right;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+#signIn {
+  float:right;
+}
+
+#registerForm {
+  background-color: #00d9f1;
+  border: 10px solid white;
+  color: white;
+  box-shadow: 0px 0px 5px rgb(193, 210, 242);
+  height: 500px;
+  left: 550px;
+  line-height: 1.6;
+  padding: 20px;
+  position: relative;
+  text-shadow: 0px 0px 6px #808080;
+  top: 20px;
+  width: 265px;
+  z-index: 99;
+}
+
+#registerForm div {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.password {
+  margin-top: 15px;
+}
+
+#registerForm input {
+  border: 1px solid grey;
+  box-shadow: 0px 0px 5px #0099aa;
+  padding: 3px;
+  width: 80%;
+  height: 30px;
+}
+
+#registerForm button {
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0px 0px 3px rgb(237, 237, 237);
+  float: right;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 90px;
+}
+
+.hidden {
+  display: none;
+}
+
+.unhidden {
+  display: block;
+}
+
 #sectionOne {
-  background-image: 
+  background-image:
   linear-gradient(
     rgba(79, 103, 116, 0.7),
     rgba(89, 110, 128, 0.7)
@@ -53,33 +140,68 @@ header {
 }
 
 button {
-  background: linear-gradient(to left,#00d9f1, #4eddd6);
-  border-radius: 40px;
-  color: white;
+  background: #98dae0;
+  background-image: -webkit-linear-gradient(top, #98dae0, #6b9cb8);
+  background-image: -moz-linear-gradient(top, #98dae0, #6b9cb8);
+  background-image: -ms-linear-gradient(top, #98dae0, #6b9cb8);
+  background-image: -o-linear-gradient(top, #98dae0, #6b9cb8);
+  background-image: linear-gradient(to bottom, #98dae0, #6b9cb8);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 3px 3px #666666;
+  -moz-box-shadow: 2px 3px 3px #666666;
+  box-shadow: 2px 3px 3px #666666;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: 3px 3px 3px rgba(64, 65, 66, 0.6);
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
   cursor: pointer;
   display: block;
-  font-size: 20px;
+  font-size: 25px;
   height: 60px;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
   text-decoration: none;
-  opacity: 0.7;
+  opacity: 1;
 }
 
+button:hover {
+  background: #8db5cc;
+  background-image: -webkit-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: -moz-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: -ms-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: -o-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: linear-gradient(to bottom, #8db5cc, #8cb6bd);
+  text-decoration: none;
+}
+
+
+
 #textContainer {
+
   text-align: center;
   color: white;
-  margin-top: 60px;
+  margin-top: 19px;
+  padding:30px;
+  padding-bottom:5px;
+  padding-top:19px;
 }
 
 p {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: 2px 2px 2px rgba(64, 65, 66, 0.5);
+
   font-size: 28px;
-  margin: 30px;
-  line-height: 1.4em;
-  font-weight: lighter;
+  margin: 18px;
+  line-height: 1.3em;
+  font-weight: 200;
+  margin-top:0;
 
 }
 
@@ -87,10 +209,7 @@ p {
   margin-top: 280px;
 }
 
-button:hover{
-  background: linear-gradient(to right,#00d9f1, #4eddd6);
-  
-  }
+
 
 #create-resume {
   height: 75px;
@@ -102,15 +221,18 @@ button:hover{
 #welcome{
   background: rgb(141, 153, 158);
   opacity: 0.6;
-  height: 60%;
+  height: 63%;
   width: 70%;
+  box-shadow: 5px 5px rgba(79, 103, 116, 0.3);
+  border-radius: 20px;
 
   position: absolute;
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: 0 auto;
+    margin-top: 132px;
 }
 
 a {
@@ -119,7 +241,7 @@ a {
 
 #scrolling{
   background: rgb(141, 153, 158);
-  opacity: 0.6;
+  opacity: 0.7;
   height: 100px;
   width: 100%;
 
@@ -139,9 +261,13 @@ a {
 
 }
 marquee {
-font-family: cursive;
-  font-size: 50px;
-  margin: 15px;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: 3px 3px 3px rgba(64, 65, 66, 0.5);
+  font-style: italic;
+  font-size: 40px;
+  font-weight:200;
+  margin: 13px;
   line-height: 1.4em;
-  margin-bottom:80px;
+  margin-bottom:50px;
+  padding-top: 5px;
 }
