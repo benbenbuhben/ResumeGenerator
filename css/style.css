@@ -77,6 +77,7 @@ iframe {
 
 #clear-save-buttons button {
   background-color: #00d9f1;
+  border-radius: 10px;
   color: white;
   cursor: pointer;
   text-shadow: 1px 1px 1px  #006d79;
@@ -98,6 +99,7 @@ iframe {
 
 
 #submitBtn {
+  border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -167,6 +169,14 @@ iframe {
   text-shadow: 1px 1px 1px  #006d79;
   width: 10em;
   height: 2em;
+}
+
+#sectionTabs #infoTab {
+  border-top-right-radius: 10px;
+}
+
+#sectionTabs #expTab {
+  border-bottom-right-radius: 10px;
 }
 
 #sectionTabs ul li:hover {
