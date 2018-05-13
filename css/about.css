@@ -1,17 +1,4 @@
 body {
-  font-family: 'Roboto Slab', serif;
-}
-
-header {
-  height: 0;
-  font-family: 'Roboto Slab', serif;
-  text-shadow: 3px 3px 3px rgba(64, 65, 66, 0.5);
-  font-weight: 400;
-  width: 100%;
-  opacity:0.6;
-}
-
-body {
   background-color: rgba(233, 241, 247, 0.466);
   background-image:
   linear-gradient(
@@ -24,8 +11,16 @@ body {
   margin: 0 auto;
 }
 
-main {
-  font-family: 'Roboto Slab', serif;
+body {
+  font-family: 'Helvetica', serif;
+}
+
+header {
+  height: 0;
+  font-family: 'Helvetica', serif;
+  text-shadow: 1px 1px 1px rgba(64, 65, 66, 0.5);
+  font-weight: 400;
+  width: 100%;
 }
 
 #header-nav {
@@ -35,45 +30,34 @@ main {
   width: 100%;
 }
 
-/* #persInfoForm{
-  margin-bottom:20px;
-} */
-
 #logo {
   height: auto;
   left: 100px;
   position: absolute;
   top: 10px;
   width: 200px;
-  opacity: 0.8;
 }
 
 #header-nav ul {
   position: relative;
   text-align: center;
-  right: 150px;
-  top: 40px;
+  right: 10%;
+  top: 45%;
 }
 
 #header-nav ul li {
   display: inline-block;
   margin-left: 75px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-
-
-
-#header-nav li a {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-
+  font-size: 16px;
 }
 
 #header-nav ul li:hover {
   opacity: 0.5;
+}
+
+#header-nav li a {
+  color: white;
+  text-decoration: none;
 }
 
 main img {
@@ -88,14 +72,14 @@ main img {
 
 }
 main h1 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Helvetica', serif;
   text-align: center;
   color:white;
   font-size: 40px;
 }
 p {
 
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Helvetica', serif;
   color:white;
   font-size: 20px;
   height: 85px;
@@ -111,10 +95,8 @@ p {
   margin-top:50px;
   padding:30px;
   margin-right: 50px;
-  opacity: 0.6;
   box-shadow: 5px 5px rgba(79, 103, 116, 0.5);
   border-radius: 20px;
-
   position: absolute;
   top:0;
   bottom: 20px;
@@ -123,4 +105,5 @@ p {
   margin: 0 auto;
   margin-top: 132px;
   padding-right: 30px;
+  height: 37em;
 }
