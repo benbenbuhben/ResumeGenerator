@@ -5,25 +5,59 @@
   <title>Resume Hacker</title>
   <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="css/homepage.css" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 </head>
 
-  <main>
+<main>
+
   <body>
     <header>
       <nav id="header-nav">
-        <img src="assets/resumehack.png" id="logo"></img>
+        <img src="img/resumehack.png" id="logo"></img>
         <ul>
-          <li><a href="#">Homepage</a></li>
-          <li><a href="#">Resume Generator</a></li>
-          <li><a href="#">About The Team</a></li>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="index.html">Resume Generator</a>
+          </li>
+          <li>
+            <a href="about.html">Our Team</a>
+          </li>
         </ul>
+        <button id="register">Register</button>
+      </nav>
+        <form id="registerForm" class="hidden">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <div>
+            <label for="firstName"><b>First Name</b></label>
+            <input type="text" placeholder="Enter Your First Name" name="firstName" required>
+          </div>
+          <div>
+            <label for="lastName"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Your Last Name" name="lastName" required>
+          </div>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+          <div class="password">
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+          </div>
+          <button type="submit" id="submit">Submit</button>
+          <button type="button" id="cancel">Cancel</button>
+        </form>
       </nav>
     </header>
-      <section id="sectionOne">
-        <div id="button-container">
-          <button type="button" onclick="index.html">Create Your Resume</button>
-        </div>
-      </section>
-    </body>
-  </main>
+    <section id="sectionOne">
+      <div class="create-resume-container">
+        <a href="index.html">
+          <button id="create-resume">Create Your Resume</button>
+        </a>
+      </div>
+    </section>
+  </body>
+</main>
+
 </html>
