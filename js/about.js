@@ -64,17 +64,17 @@ function displayBio(){
     bioP.textContent = 'Info' ;
 
 
-  }else if (mouseX > 225 && mouseX < 370 && mouseY > 306 && mouseY < 455){
+  } else if (mouseX > 225 && mouseX < 370 && mouseY > 306 && mouseY < 455){
     bioH.textContent = 'Noah';
     bioP.textContent = 'info';
 
 
-  }else if (mouseX > 405 && mouseX < 550 && mouseY > 76 && mouseY < 224){
+  } else if (mouseX > 405 && mouseX < 550 && mouseY > 76 && mouseY < 224){
     bioH.textContent = 'Jen';
     bioP.textContent = 'info';
 
 
-  }else if (mouseX > 685 && mouseX < 830 && mouseY > 127 && mouseY < 272){
+  } else if (mouseX > 685 && mouseX < 830 && mouseY > 127 && mouseY < 272){
     bioH.textContent = 'khalil';
     bioP.textContent = 'info';
   }

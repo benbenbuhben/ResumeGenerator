@@ -76,7 +76,7 @@ var yourData = localStorage.getItem('userData');
 var usableItems = JSON.parse(yourData);
 console.log('here is local storage');
 
-if (usableItems && Object.keys(usableItems).length) { //  
+if (usableItems && Object.keys(usableItems).length) { //
   UserData = usableItems;
   console.log('Loaded from Local Storage');
   //return;
@@ -312,51 +312,3 @@ function handleSubmit6(event) {
   document.getElementById('expForm').reset();
 
 }
-
-/////////////////////////
-
-
-
-
-
-
-
-
-
-
-//genAllContent();
-
-
-
-
-// //add event listener to all tabs by ID
-// function tabHandler(event) {
-//   //displaynone by class
-
-
-//   var tabs = document.getElementsByClassName("tab");
-
-
-
-//   var clickedTabID = event.target.id;
-//   if (clickedTabID === "infoTab") {
-//     var clickedTab = document.getElementById('personalInfo');
-//     infoField.style.display = "block";
-//   } else if (clickedTabID === "techTab") {
-//     var clickedTab = document.getElementById('personalInfo');
-//     infoField.style.display = "block";
-//   } else if (clickedTabID === "infoTab") {
-//     var clickedTab = document.getElementById('personalInfo');
-//     infoField.style.display = "block";
-//   } else if (clickedTabID === "infoTab") {
-//     var clickedTab = document.getElementById('personalInfo');
-//     infoField.style.display = "block";
-//   }
-
-// }
-
-//  techtab projtab edtab exptab
-
-// function clickToEdit() {
-
-// }
