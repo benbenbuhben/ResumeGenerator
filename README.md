@@ -1,6 +1,6 @@
 # ResumeGenerator
 STRETCH GOALS:
-
+changed a bunch of stuff
 Add a References generator
 Add a cover letter generator
 Add a troll resume and cover letter generator with auto-genned descriptions
