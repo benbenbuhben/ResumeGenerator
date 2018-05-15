@@ -1,12 +1,13 @@
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Helvetica', serif;
 }
 
 header {
   height: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Helvetica', serif;
+  text-shadow: 1px 1px 1px rgba(64, 65, 66, 0.5);
+  font-weight: 400;
   width: 100%;
-  opacity:0.6;
 }
 
 #header-nav {
@@ -27,13 +28,18 @@ header {
 #header-nav ul {
   position: relative;
   text-align: center;
-  right: 150px;
-  top: 40px;
+  right: 10%;
+  top: 45%;
 }
 
 #header-nav ul li {
   display: inline-block;
   margin-left: 75px;
+  font-size: 16px;
+}
+
+#header-nav ul li:hover {
+  opacity: 0.5;
 }
 
 #header-nav li a {
@@ -41,56 +47,131 @@ header {
   text-decoration: none;
 }
 
+#register {
+  background-color: #00d9f1;
+  border-radius: 10px;
+  color: white;
+  float: right;
+  font-size: 14px;
+  height: 35px;
+  position: relative;
+  right: 65px;
+  text-shadow: 1px 1px 3px rgb(106, 106, 106);
+  top: 15px;
+  width: 125px;
+}
+
+.registeredUser {
+  color: white;
+  float: right;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+#signIn {
+  float:right;
+}
+
+#registerForm {
+  background-color: #00d9f1;
+  border: 10px solid white;
+  color: white;
+  box-shadow: 0px 0px 5px rgb(193, 210, 242);
+  height: 500px;
+  left: 550px;
+  line-height: 1.6;
+  padding: 20px;
+  position: relative;
+  text-shadow: 0px 0px 6px #808080;
+  top: 20px;
+  width: 265px;
+  z-index: 99;
+}
+
+#registerForm div {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.password {
+  margin-top: 15px;
+}
+
+#registerForm input {
+  border: 1px solid grey;
+  box-shadow: 0px 0px 5px #0099aa;
+  padding: 3px;
+  width: 80%;
+  height: 30px;
+}
+
+#registerForm button {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgb(237, 237, 237);
+  float: right;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 90px;
+}
+
+.hidden {
+  display: none;
+}
+
+.unhidden {
+  display: block;
+}
+
 #sectionOne {
-  background-image: 
+  background-image:
   linear-gradient(
     rgba(79, 103, 116, 0.7),
     rgba(89, 110, 128, 0.7)
   ),
   url("../img/tech interview.jpg");
   height: 100vh;
+  max-height: 100%;
   margin: 0 auto;
 }
 
-button {
-  background: linear-gradient(to left,#00d9f1, #4eddd6);
-  border-radius: 40px;
+#create-resume {
+  background: #00d9f1;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 3px 3px #666666;
+  -moz-box-shadow: 2px 3px 3px #666666;
+  box-shadow: 2px 3px 3px #666666;
+  text-shadow: 1px 1px 2px #008c9b;
   color: white;
+  text-decoration: none;
   cursor: pointer;
   display: block;
-  font-size: 20px;
+  font-size: 18px;
   height: 60px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   text-align: center;
-  margin-top: 50px;
   text-decoration: none;
-  opacity: 0.7;
 }
 
-#textContainer {
-  text-align: center;
-  color: white;
-  margin-top: 60px;
+.create-resume-container {
+  position: relative;
+  top: 15%;
 }
 
-p {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin: 30px;
-  line-height: 1.4em;
-  font-weight: lighter;
-
+#create-resume:hover {
+  background: #8db5cc;
+  background-image: -webkit-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: -moz-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: -ms-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: -o-linear-gradient(top, #8db5cc, #8cb6bd);
+  background-image: linear-gradient(to bottom, #8db5cc, #8cb6bd);
+  text-decoration: none;
 }
-
-#welcome a {
-  margin-top: 280px;
-}
-
-button:hover{
-  background: linear-gradient(to right,#00d9f1, #4eddd6);
-  
-  }
 
 #create-resume {
   height: 75px;
@@ -99,27 +180,13 @@ button:hover{
   width: 200px;
 }
 
-#welcome{
-  background: rgb(141, 153, 158);
-  opacity: 0.6;
-  height: 60%;
-  width: 70%;
-
-  position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
 a {
   text-decoration: none;
 }
 
 #scrolling{
   background: rgb(141, 153, 158);
-  opacity: 0.6;
+  opacity: 0.7;
   height: 100px;
   width: 100%;
 
@@ -138,10 +205,14 @@ a {
   margin: 0px;
 
 }
+
 marquee {
-font-family: cursive;
-  font-size: 50px;
-  margin: 15px;
+  position: absolute;
+  font-style: italic;
+  font-size: 40px;
+  font-weight:200;
+  margin: 13px;
   line-height: 1.4em;
-  margin-bottom:80px;
+  margin-bottom: 10em;
+  padding-top: 5px;
 }

@@ -1,25 +1,11 @@
-// loadfromLS
-
-// genallcontent(
-
-//   dfsdsf
-//   sfbsfbsf
-//   sdfbfsg
-// )
-
-// genallcontent()
-
 'use strict';
 
-//var UserData = {};
-
-//function loadLS() {
 var yourData = localStorage.getItem('userData');
 console.log(yourData);
 var usableItems = JSON.parse(yourData);
 console.log('here is local storage');
 
-if (usableItems && Object.keys(usableItems).length) { //  
+if (usableItems && Object.keys(usableItems).length) { //
   var UserData = usableItems;
   console.log('Loaded from Local Storage');
   //return;
@@ -172,14 +158,14 @@ if (UserData.edit2hover.length > 0) {
       bigwrappers[index].style.marginTop = '3px';
       panel.style.display = 'initial';
       panel.style.zIndex = '1';
-      
+
     });
     bigwrappers[index].addEventListener('mouseout', function () {
       deleteImg.style.visibility = 'hidden';
       editImg.style.visibility = 'hidden';
       fieldsets[index].style.zIndex = 'initial';
       panel.style.display = 'none';
-      
+
 
     });
     wrappers[index].addEventListener('mouseover', function () {
@@ -193,18 +179,5 @@ if (UserData.edit2hover.length > 0) {
 
   }
 }
-
-//}
-
-//addClickToEdit();
-
-// function deleteFieldset(deleteIndex) {
-//   console.log('The index to delete is' + deleteIndex);
-// }
-
-// function editFieldset(editIndex) {
-//   console.log('The index to edit is' + editIndex);
-// }
-
 
 genAllContent();
