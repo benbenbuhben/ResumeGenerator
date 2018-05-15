@@ -1,25 +1,11 @@
-// loadfromLS
-
-// genallcontent(
-
-//   dfsdsf
-//   sfbsfbsf
-//   sdfbfsg
-// )
-
-// genallcontent()
-
 'use strict';
 
-//var UserData = {};
-
-//function loadLS() {
 var yourData = localStorage.getItem('userData');
 console.log(yourData);
 var usableItems = JSON.parse(yourData);
 console.log('here is local storage');
 
-if (usableItems && Object.keys(usableItems).length) { //  
+if (usableItems && Object.keys(usableItems).length) { //
   var UserData = usableItems;
   console.log('Loaded from Local Storage');
   //return;
@@ -32,7 +18,7 @@ function contentGen(parentElID, childEl, userText) {
   var parentVar = document.getElementById(parentElID);
   var childVar = document.createElement(childEl);
   //childVar.addEventListener('submit', handleSubmit);
-  childVar.textContent = userText;
+  childVar.innerHTML = userText;
   parentVar.appendChild(childVar);
 }
 
@@ -102,6 +88,7 @@ function genAllContent() {
 }
 
 //function addClickToEdit() { //Will get added at the end of submit handlers (maybe as onhover callback)
+var panel = document.getElementById('panel');
 
 if (UserData.edit2hover.length > 0) {
 
@@ -156,17 +143,30 @@ if (UserData.edit2hover.length > 0) {
     wrappers[index].appendChild(editImg);
 
     bigwrappers[index].addEventListener('mouseover', function () {
+      deleteImg.style.position = 'relative';
+      editImg.style.position = 'relative';
+      deleteImg.style.zIndex = '3';
+      editImg.style.zIndex = '3';
       deleteImg.style.visibility = 'visible';
       editImg.style.visibility = 'visible';
-      resume.style.opacity = '0.3';
-      fieldsets[index].style.zIndex = '3';
-      fieldsets[index].style.opacity = '1';
-      console.log(fieldsets[index].style.opacity);
+      deleteImg.style.backgroundColor= 'white';
+      editImg.style.backgroundColor= 'white';
+      bigwrappers[index].style.position = 'relative';
+      bigwrappers[index].style.zIndex = '3';
+      bigwrappers[index].style.backgroundColor= 'white';
+      bigwrappers[index].style.paddingTop = '3px';
+      bigwrappers[index].style.marginTop = '3px';
+      panel.style.display = 'initial';
+      panel.style.zIndex = '1';
+
     });
     bigwrappers[index].addEventListener('mouseout', function () {
       deleteImg.style.visibility = 'hidden';
       editImg.style.visibility = 'hidden';
-      resume.style.opacity = '1';
+      fieldsets[index].style.zIndex = 'initial';
+      panel.style.display = 'none';
+
+
     });
     wrappers[index].addEventListener('mouseover', function () {
       deleteImg.style.visibility = 'visible';
@@ -179,18 +179,5 @@ if (UserData.edit2hover.length > 0) {
 
   }
 }
-
-//}
-
-//addClickToEdit();
-
-// function deleteFieldset(deleteIndex) {
-//   console.log('The index to delete is' + deleteIndex);
-// }
-
-// function editFieldset(editIndex) {
-//   console.log('The index to edit is' + editIndex);
-// }
-
 
 genAllContent();
